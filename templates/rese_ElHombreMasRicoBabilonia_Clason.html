@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El hombre más rico de babilonia</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='guyfox.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" media="screen and (min-width: 768px)">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles-media.css') }}" media="screen and (max-width: 767px)">
+</head>
+<body>
+    <!-- Banner con menú integrado -->
+    <header class="banner">
+        <div class="banner-content">
+            <h1 class="banner-title">B DE BLOG</h1>
+            <nav class="banner-menu">
+                <button class="menu-button" onclick="location.href='/'">Home</button>
+                <button class="menu-button" onclick="location.href='/historias'">Historias</button>
+                <button class="menu-button" onclick="location.href='/resenas'">Reseñas</button>
+            </nav>
+        </div>
+        <img src="{{ url_for('static', filename='guyfox.webp') }}" alt="Blog Logo" class="banner-image">
+    </header>
+    
+    <div class="container">
+        <h2 class="story-title">El hombre más rico de babilonia</h2>
+        <div class="story-text">
+            
+            <p>Si quieres darle un giro a tu relación con el dinero, este es tu libro.</p>
+            <p>Las lecciones aquí te enseñarán a gestionar mejor lo que tienes y a hacerlo crecer con el tiempo. Cada historia es un recordatorio de que la prosperidad no depende de la suerte, sino de decisiones inteligentes y constancia.</p>
+            <p>Me hubiera encantado haber leído este libro diez años atrás. Así que si estás leyendo esta reseña, no lo pienses demasiado, léelo. Tu YO del futuro lo agradecerá.</p>
+            
+            <p>⭐⭐⭐⭐⭐ (5/5)</p>
+            <p class="story-author">Ing. Wilson Felipe Martínez Barrantes.</p>
+
+        </div>
+
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='ehmrdb.png') }}" alt="ehmrdb" class="story-image">
+        </div>
+    </div>
+</body>
+</html>

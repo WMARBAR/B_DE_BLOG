@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El simbolo perdido</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='guyfox.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" media="screen and (min-width: 768px)">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles-media.css') }}" media="screen and (max-width: 767px)">
+</head>
+<body>
+    <!-- Banner con menú integrado -->
+    <header class="banner">
+        <div class="banner-content">
+            <h1 class="banner-title">B DE BLOG</h1>
+            <nav class="banner-menu">
+                <button class="menu-button" onclick="location.href='/'">Home</button>
+                <button class="menu-button" onclick="location.href='/historias'">Historias</button>
+                <button class="menu-button" onclick="location.href='/resenas'">Reseñas</button>
+            </nav>
+        </div>
+        <img src="{{ url_for('static', filename='guyfox.webp') }}" alt="Blog Logo" class="banner-image">
+    </header>
+    
+    <div class="container">
+        <h2 class="story-title">El símbolo perdido</h2>
+        <div class="story-text">
+            
+            <p>Dan Brown domina una técnica narrativa que atrapa desde el primer momento: hace que necesites saber qué va a pasar y no puedas dejar de pensar en el desenlace. Cada capítulo está tan bien llevado que es casi imposible procrastinar con sus libros.</p>
+
+            <p><em>El símbolo perdido</em> aborda temáticas masónicas, explora los cimientos ideológicos de Estados Unidos y plantea cómo la humanidad ha estado, y quizá sigue estando, a merced de organizaciones secretas.</p>
+            
+            <p>Más allá del misterio, este libro deja una reflexión poderosa. El destino de la humanidad siempre ha estado, y seguirá estando, en manos de los propios seres humanos y la imagen de Dios no es un absoluto inmutable, sino un reflejo moldeado por aquellos que detentan el poder.</p>
+            
+            <p>A lo largo de la historia, quienes gobiernan han sido los verdaderos arquitectos de lo divino, moldeando la fe y sus símbolos según sus intereses, sus miedos y sus ambiciones.</p>
+            
+            <p>¿Alguna vez te has preguntado si tu forma de ver a Dios es realmente tuya... o si te fue impuesta?</p>
+            
+            <p>Si no te asusta enfrentar esa respuesta, <em>El símbolo perdido</em> es un libro que no puedes dejar pasar.</p>
+            
+            <p>Calificación final:<br>
+                ⭐⭐⭐⭐⭐(5/5)</p>
+            <p class="story-author">Ing. Wilson Felipe Martínez Barrantes.</p>
+
+        </div>
+
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='SimboloPerdido.png') }}" alt="SimboloPerdido" class="story-image">
+        </div>
+    </div>
+</body>
+</html>

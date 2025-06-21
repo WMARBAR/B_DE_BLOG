@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KYBALIÓN</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='guyfox.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" media="screen and (min-width: 768px)">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles-media.css') }}" media="screen and (max-width: 767px)">
+</head>
+<body>
+    <!-- Banner con menú integrado -->
+    <header class="banner">
+        <div class="banner-content">
+            <h1 class="banner-title">B DE BLOG</h1>
+            <nav class="banner-menu">
+                <button class="menu-button" onclick="location.href='/'">Home</button>
+                <button class="menu-button" onclick="location.href='/historias'">Historias</button>
+                <button class="menu-button" onclick="location.href='/resenas'">Reseñas</button>
+            </nav>
+        </div>
+        <img src="{{ url_for('static', filename='guyfox.webp') }}" alt="Blog Logo" class="banner-image">
+    </header>
+    
+    <div class="container">
+        <h2 class="story-title">KYBALIÓN</h2>
+        <div class="story-text">
+
+            <p>¿Por dónde empezar?</p>
+            <p>Este es un libro pequeño —apenas 133 páginas en la edición que tengo—, pero me tomó un mes completo leerlo. ¿La razón? Cada capítulo está cargado de ideas profundas que te obligan a detenerte, reflexionar y releer.</p>
+            
+            <p>Lo que más me impactó fue cómo el libro logra, a través del razonamiento lógico, plantear una posible explicación sobre quién —o qué— es Dios. Entre sus páginas se formula una paradoja fascinante:</p>
+            
+            <p><em>Si Dios es único, entonces no puede haber más de un solo Dios. Y si es único, tampoco puede dividirse. Pero si no puede dividirse, ¿cómo logró crearnos?</em></p>
+            
+            <p>Aquí es donde <strong>El Kybalión</strong> comienza a volverse realmente asombroso. El texto advierte que los necios dirán que, con su poder infinito, Dios tomó estrellas, polvo estelar, materia... y nos formó. Pero fallan en su comprensión, porque si Dios es único y absoluto, entonces <strong>nada puede existir fuera de Él</strong>. Todo está en Dios.</p>
+            
+            <p>Hasta este punto, el libro lanza una pregunta que puede parecer imposible de responder:</p>
+            
+            <p><em>¿Cómo nos creó Dios si no puede dividirse ni tomar nada fuera de sí mismo?</em></p>
+            
+            <p>Y es entonces cuando da una de las respuestas más brillantes que he leído. Una respuesta que no solo es lógica, sino que deja una profunda sensación de asombro.</p>
+            
+            <p>Piensa en ello y si quieres descubrirlo, te invito a leer este magnífico libro.</p>
+                        
+            <p>Calificación final:<br>
+            ⭐⭐⭐⭐⭐ (5/5)</p>
+            <p class="story-author">Ing. Wilson Felipe Martínez Barrantes.</p>
+
+        </div>
+
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='KYBALION.png') }}" alt="KYBALION" class="story-image">
+        </div>
+    </div>
+</body>
+</html>

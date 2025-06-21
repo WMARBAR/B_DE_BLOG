@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HISTORIAS</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='guyfox.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" media="screen and (min-width: 768px)">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles-media.css') }}" media="screen and (max-width: 767px)">
+</head>
+<body>
+    <!-- Banner con menú integrado -->
+    <header class="banner">
+        <div class="banner-content">
+            <h1 class="banner-title">B DE BLOG</h1>
+            <nav class="banner-menu">
+                <button class="menu-button" onclick="location.href='/'">Home</button>
+                <button class="menu-button" onclick="location.href='/historias'">Historias</button>
+                <button class="menu-button" onclick="location.href='/resenas'">Reseñas</button>
+            </nav>
+        </div>
+        <img src="{{ url_for('static', filename='guyfox.webp') }}" alt="Blog Logo" class="banner-image">
+    </header>
+
+    <!-- Menú principal debajo del banner -->
+    <div class="menu">
+        <h1 class="menu-title">HISTORIAS</h1>
+        <button class="menu-button" onclick="location.href='/H_ElDiaQueElSol'">El día que el sol no salió</button>
+        <button class="menu-button" onclick="location.href='/H_eLEco'">El Eco</button>
+        <button class="menu-button" onclick="location.href='/H_cyberRevuelta'">La nueva mayoría</button>
+        
+    </div>
+
+    <div class="container">
+        <h2 class="story-title"></h2>
+        <p class="story-text"></p>
+    </div>
+</body>
+</html>

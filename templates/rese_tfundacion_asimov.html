@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trilogia de la fundación</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='guyfox.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" media="screen and (min-width: 768px)">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles-media.css') }}" media="screen and (max-width: 767px)">
+</head>
+<body>
+    <!-- Banner con menú integrado -->
+    <header class="banner">
+        <div class="banner-content">
+            <h1 class="banner-title">B DE BLOG</h1>
+            <nav class="banner-menu">
+                <button class="menu-button" onclick="location.href='/'">Home</button>
+                <button class="menu-button" onclick="location.href='/historias'">Historias</button>
+                <button class="menu-button" onclick="location.href='/resenas'">Reseñas</button>
+            </nav>
+        </div>
+        <img src="{{ url_for('static', filename='guyfox.webp') }}" alt="Blog Logo" class="banner-image">
+    </header>
+    
+    <div class="container">
+        <h2 class="story-title">Trilogía de la fundación</h2>
+        <div class="story-text">
+            <p>En un futuro lejano, la humanidad ha colonizado la galaxia, y un matemático visionario, Hari Seldon, predice la inminente caída del Imperio Galáctico. Para preservar el conocimiento y acortar el período de caos que seguirá, Seldon establece la Fundación, una colonia científica diseñada para convertirse en la clave de la reconstrucción de la civilización.</p>
+            
+            <p>Isaac Asimov. Es curioso cómo su nombre coincide con el de un profeta, como si el destino le hubiera reservado un lugar entre los visionarios. De algún modo, sus escritos se asemejan a profecías, anticipando un futuro que el mundo apenas podía vislumbrar.</p>
+
+            <p>Nacido en 1920, al final de la Primera Guerra Mundial, y fallecido en 1992 a los 72 años, Asimov fue testigo de una era de cambios vertiginosos. En su infancia, el mundo comenzaba la transición hacia la era atómica y durante su juventud, vivió los horrores de la Segunda Guerra Mundial. Cuando murió, la humanidad apenas empezaba a comunicarse con las máquinas, un sueño que él había plasmado décadas antes en sus historias.</p>
+            
+            <p>Robots, videollamadas, inteligencias artificiales... Asimov no solo las imaginó, sino que las comprendió en un nivel profundo, como si su mente hubiera viajado al futuro. Ese poder visionario, unido al fascinante periodo histórico en el que vivió, es lo que me llevó a admirarlo como autor.</p>
+            
+            <p>Cuando decidí adentrarme en su obra investigué por internet por dónde empezar. En muchos sitios recomendaban ampliamente la Trilogía de la Fundación. Compré el libro en la Panamericana del centro comercial Boulevard en Bogotá, acompañado de mis abuelos. Recuerdo que me costó en ese momento sesenta y cuatro mil pesos colombianos. Esa misma tarde lo comencé a leer.</p>
+            
+            <p>Me demoré un mes en terminarlo, y quedé impactado. Cada parte de la trilogía presentaba una historia y una trama impecablemente trabajadas, que se resolvían de la manera más lógica y brillante posible. El universo que Asimov crea es fascinante, y lo que más me cautivó es que el verdadero protagonista siempre es el ser humano. A diferencia de otras obras de ciencia ficción, en este universo no existen robots autónomos. Por supuesto, hay tecnología avanzada para los viajes espaciales y la construcción de sociedades planetarias, pero los héroes y las decisiones clave siempre recaen en los homo sapiens sapiens.</p>
+            
+            <p>Al terminar la trilogía, me quedé con una pregunta intrigante: ¿Es posible prever de forma general el futuro? Si así fuera, ¿cuánto tiempo podríamos anticipar? ¿Diez años? ¿Cien? ¿Mil? En la trilogía, la psicohistoria de Hari Seldon es capaz de predecir hasta 30,000 años en el futuro, basándose en las conductas de las masas como variables de entrada. Entonces, me surge otra inquietud:</p>
+            
+            <p>¿Si analizamos nuestras propias conductas como sociedad, podríamos llegar a ver el futuro?</p>
+            
+            <p>La Trilogía de la Fundación es una obra imprescindible para cualquier amante de la ciencia ficción o para aquellos que disfrutan de relatos que invitan a reflexionar sobre la historia y la naturaleza humana desde una perspectiva diferente. Si eres un lector empedernido, como yo, no puedes dejar pasar esta trilogía que no solo entretiene, sino que también desafía tu forma de pensar.</p>
+            
+            <p>Calificación final:
+                ⭐⭐⭐⭐⭐ (5/5)</p>
+            <p class="story-author">Ing. Wilson Felipe Martínez Barrantes.</p>
+
+        </div>
+
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='laFundacion.webp') }}" alt="El Sol Oscurecido" class="story-image">
+        </div>
+    </div>
+</body>
+</html>

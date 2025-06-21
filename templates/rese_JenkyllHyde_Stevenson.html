@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El extraño caso del doctor Jekyll y el señor Hyde</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='guyfox.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" media="screen and (min-width: 768px)">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles-media.css') }}" media="screen and (max-width: 767px)">
+</head>
+<body>
+    <!-- Banner con menú integrado -->
+    <header class="banner">
+        <div class="banner-content">
+            <h1 class="banner-title">B DE BLOG</h1>
+            <nav class="banner-menu">
+                <button class="menu-button" onclick="location.href='/'">Home</button>
+                <button class="menu-button" onclick="location.href='/historias'">Historias</button>
+                <button class="menu-button" onclick="location.href='/resenas'">Reseñas</button>
+            </nav>
+        </div>
+        <img src="{{ url_for('static', filename='guyfox.webp') }}" alt="Blog Logo" class="banner-image">
+    </header>
+    
+    <div class="container">
+        <h2 class="story-title">El extraño caso del doctor Jekyll y el señor Hyde</h2>
+        <div class="story-text">
+            
+            <p>Todo el mundo, y realmente me refiero a todo el mundo, guarda secretos y enfrenta conflictos internos. Una lucha entre el bien y el mal dentro de nuestro ser.</p>
+            <p>El Dr. Henry Jekyll es un respetado científico en la sociedad londinense y se enfrenta a una batalla interna contra impulsos que él mismo considera oscuros. En busca de una solución, desarrolla una fórmula que le permite encarnar a Edward Hyde, su completa antítesis moral y física. Hyde representa la ausencia total de restricciones sociales y éticas, actuando según sus impulsos más primitivos sin comprometer la reputación de Jekyll.</p>
+            <p>Lo que inicia como un meticuloso experimento científico pronto escala hacia un caos imprevisto, desencadenando una serie de eventos aterradores. A través de esta narrativa, el libro se adentra en la dualidad inherente al ser humano, explorando los riesgos de perder el control sobre nuestros lados más sombríos.</p>
+            <p>Alan Moore, un gran escritor, reinterpretó a este personaje en una de sus novelas gráficas más populares, "La Liga de los Hombres Extraordinarios". Fue ahí donde descubrí esta lectura y me pareció curioso cómo Hyde era representado como un individuo corpulento y extremadamente fuerte, en marcado contraste con la obra original donde es descrito con rasgos más similares a los de un duende.</p>
+            <p>Una lectura altamente recomendada, y no me sorprende que haya inspirado a numerosos autores a crear obras profundas y complejas. "Dr. Jekyll y Mr. Hyde" no solo entretiene, sino que también ofrece amplias reflexiones sobre la naturaleza humana. Escrita en 1886, sus ideas siguen resonando incluso en el año 2025, momento temporal en el que escribo esta reseña.</p>
+            
+            
+            <p>Calificación final:<br>
+            ⭐⭐⭐⭐⭐ (5/5)</p>
+            <p class="story-author">Ing. Wilson Felipe Martínez Barrantes.</p>
+
+        </div>
+
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='JekyllHyde.png') }}" alt="Vuelta80" class="story-image">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El club de la pelea</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='guyfox.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" media="screen and (min-width: 768px)">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles-media.css') }}" media="screen and (max-width: 767px)">
+</head>
+<body>
+    <!-- Banner con menú integrado -->
+    <header class="banner">
+        <div class="banner-content">
+            <h1 class="banner-title">B DE BLOG</h1>
+            <nav class="banner-menu">
+                <button class="menu-button" onclick="location.href='/'">Home</button>
+                <button class="menu-button" onclick="location.href='/historias'">Historias</button>
+                <button class="menu-button" onclick="location.href='/resenas'">Reseñas</button>
+            </nav>
+        </div>
+        <img src="{{ url_for('static', filename='guyfox.webp') }}" alt="Blog Logo" class="banner-image">
+    </header>
+    
+    <div class="container">
+        <h2 class="story-title">El club de la pelea</h2>
+        <div class="story-text">
+            
+            <p>Chuck Palahniuk. Me he disfrutado dos de sus obras y este 2025 leeré otra. Sus novelas son bizarras, violentas y filosóficas.</p>
+
+            <p>Obviamente llegué a este libro por la brutal película de Norton y Brad Pitt. Me abrió la mente. La crítica al consumismo es tan ácida que deja cicatriz. La sociedad de la que el protagonista escapa, y aquella de la que luego forma parte, representan un cambio de paradigma total. Pasamos de un tipo que lo tenía todo “bajo control” a uno que quiere descontrolarlo todo.</p>
+            
+            <p>El libro es igual de brutal. Mantiene esa misma emoción visceral y, además, es una auténtica biblia para aprender a escribir en primera persona. La leyenda dice que Chuck lo escribió de una sentada y apenas le hizo cambios. Increíblemente quedó perfecto.</p>
+            
+            <p>Ah, y si te impresionó la escena de la grasa en la película, el libro se pasa de grotesco con una escena aún más intensa entre el protagonista y su novia.</p>
+            
+            <p>Léelo y recuerda jamás hablar del club de la pela.</p>
+
+            <p>Calificación final:<br>
+            ⭐⭐⭐⭐⭐ (5/5)</p>
+            <p class="story-author">Ing. Wilson Felipe Martínez Barrantes.</p>
+
+        </div>
+
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='fclub.png') }}" alt="fclub" class="story-image">
+        </div>
+    </div>
+</body>
+</html>

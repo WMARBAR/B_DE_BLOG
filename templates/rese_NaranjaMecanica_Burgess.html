@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La naranja mecánica</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='guyfox.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" media="screen and (min-width: 768px)">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles-media.css') }}" media="screen and (max-width: 767px)">
+</head>
+<body>
+    <!-- Banner con menú integrado -->
+    <header class="banner">
+        <div class="banner-content">
+            <h1 class="banner-title">B DE BLOG</h1>
+            <nav class="banner-menu">
+                <button class="menu-button" onclick="location.href='/'">Home</button>
+                <button class="menu-button" onclick="location.href='/historias'">Historias</button>
+                <button class="menu-button" onclick="location.href='/resenas'">Reseñas</button>
+            </nav>
+        </div>
+        <img src="{{ url_for('static', filename='guyfox.webp') }}" alt="Blog Logo" class="banner-image">
+    </header>
+    
+    <div class="container">
+        <h2 class="story-title">La naranja mecánica</h2>
+        <div class="story-text">
+            
+            <p>Confieso que primero vi la película de Kubrick, que por cierto está entre mis favoritas. Siempre había querido leer el libro para comprobar si era cierto todo lo impactante que sucede en la película y, para mi sorpresa, el libro es aún más intenso, ya que el pequeño Alex es más vil y sus "drugos" más crueles.</p>
+            <p>Este se ha convertido en mi libro favorito. Lo leí en cinco días. Me acompañó en viajes de TransMilenio y en cafeterías.</p>
+            <p>Nos cuenta la historia de Alex DeLarge, un joven desocupado que, al no tener nada mejor que hacer, decide saciar su aburrimiento mediante la búsqueda de emociones fuertes y peligrosas. Junto a su banda de "drugos", Alex se sumerge en una espiral de violencia extrema y actos vandálicos, explorando los límites de la moralidad. Este comportamiento transgresor es presentado de manera cruda y sin filtros, llevando al lector a cuestionar la naturaleza del libre albedrío y las fuerzas sociales que moldean el comportamiento del individuo.</p>
+            <p>No contento con solo explorar la violencia juvenil, Anthony Burgess, el autor, nos plantea otro dilema profundo. Si le quitamos la maldad a un hombre, ¿seguirá siendo libre?</p>
+            <p>Alex es sometido al tratamiento Ludovico, una intensa experiencia sensorial diseñada para generar aversión física y psicológica ante la idea de causar dolor. Este proceso lo convierte en alguien incapaz de ejercer la violencia, pero a la vez, lo hace extremadamente vulnerable y cuestiona la esencia de su libre albedrío.</p>
+            <p>El bien es valioso en el hombre porque, teniendo la oportunidad de hacer el mal, decide no hacerlo. Ahí radica un mayor valor en la elección del bien. Sin embargo, la idea de tener a un psicópata potencialmente asesino y completamente antisocial bajo control también posee un atractivo indudable. ¿Qué opinas tú? No te pierdas esta obra que sé que te gustará.</p>
+            
+            
+            <p>Calificación final:<br>
+            ⭐⭐⭐⭐⭐ (5/5)</p>
+            <p class="story-author">Ing. Wilson Felipe Martínez Barrantes.</p>
+
+        </div>
+
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='Naranja_mecanica.png') }}" alt="Naranja" class="story-image">
+        </div>
+    </div>
+</body>
+</html>

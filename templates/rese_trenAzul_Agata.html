@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El misterio del tren azul</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='guyfox.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" media="screen and (min-width: 768px)">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles-media.css') }}" media="screen and (max-width: 767px)">
+</head>
+<body>
+    <!-- Banner con menú integrado -->
+    <header class="banner">
+        <div class="banner-content">
+            <h1 class="banner-title">B DE BLOG</h1>
+            <nav class="banner-menu">
+                <button class="menu-button" onclick="location.href='/'">Home</button>
+                <button class="menu-button" onclick="location.href='/historias'">Historias</button>
+                <button class="menu-button" onclick="location.href='/resenas'">Reseñas</button>
+            </nav>
+        </div>
+        <img src="{{ url_for('static', filename='guyfox.webp') }}" alt="Blog Logo" class="banner-image">
+    </header>
+    
+    <div class="container">
+        <h2 class="story-title">El misterio del tren azul</h2>
+        <div class="story-text">
+            
+            <p>La Europa de 1920. Tan bonita, apenas reconstruyéndose de la Gran Guerra y ya preparándose para una nueva. Una Europa llena de personas opulentas, nuevos sistemas de gobierno y asesinatos...</p>
+
+            <p>Agatha Christie te sumerge en una historia de tensión, donde sientes que estás jugando una partida interminable de "¿adivina quién es el asesino?". Cada personaje que aparece se convierte en sospechoso, salvo, por supuesto, su hábil y perspicaz detective Hercule Poirot.</p>
+            
+            <p><em>El misterio del tren azul</em> te va a hacer pasar un buen rato. Una historia envolvente, elegante y llena de ese suspenso que solo Christie sabe construir.</p>
+            
+            <p>Calificación final:<br>
+            ⭐⭐⭐⭐ (4/5)</p>
+            <p class="story-author">Ing. Wilson Felipe Martínez Barrantes.</p>
+
+        </div>
+
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='TrenAzul.png') }}" alt="TrenAzul" class="story-image">
+        </div>
+    </div>
+</body>
+</html>

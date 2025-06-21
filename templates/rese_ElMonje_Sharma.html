@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El monje que vendió su ferrari</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='guyfox.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" media="screen and (min-width: 768px)">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles-media.css') }}" media="screen and (max-width: 767px)">
+</head>
+<body>
+    <!-- Banner con menú integrado -->
+    <header class="banner">
+        <div class="banner-content">
+            <h1 class="banner-title">B DE BLOG</h1>
+            <nav class="banner-menu">
+                <button class="menu-button" onclick="location.href='/'">Home</button>
+                <button class="menu-button" onclick="location.href='/historias'">Historias</button>
+                <button class="menu-button" onclick="location.href='/resenas'">Reseñas</button>
+            </nav>
+        </div>
+        <img src="{{ url_for('static', filename='guyfox.webp') }}" alt="Blog Logo" class="banner-image">
+    </header>
+    
+    <div class="container">
+        <h2 class="story-title">El monje que vendió su ferrari</h2>
+        <div class="story-text">
+            
+            <p>Si estás emprendiendo un camino hacia el desarrollo personal, "El monje que vendió su Ferrari" es una excelente opción para comenzar. Este libro explica de manera clara y sencilla los pasos a seguir para alcanzar la paz mental.</p> 
+            <p>Narra las enseñanzas de un abogado que, teniéndolo todo materialmente, se sentía vacío por dentro. Decidió venderlo todo y viajar a la India, donde su travesía lo llevó a adquirir el conocimiento más esclarecedor.</p> 
+            <p>A pesar de ser un libro breve, es profundamente sustancioso. Poniendo en práctica aunque sea una de las siete virtudes que expone, tu vida adquirirá un matiz diferente, más luminoso.</p>
+            <p>El libro También está salpicado de hermosas citas.</p>
+            <p>"No hay errores en la vida, solo lecciones", "Incluso el dolor puede ser buen maestro", "Cada flecha en la diana es el resultado de cien flechas erradas"...</p>
+            <p>Léelo. Date ese regalo.</p>
+            <p>Calificación final:<br>
+            ⭐⭐⭐⭐⭐ (5/5)</p>
+            <p class="story-author">Ing. Wilson Felipe Martínez Barrantes.</p>
+
+        </div>
+
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='Elmonje.png') }}" alt="El monje" class="story-image">
+        </div>
+    </div>
+</body>
+</html>

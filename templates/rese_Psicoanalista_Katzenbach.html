@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El psicoanalista</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='guyfox.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" media="screen and (min-width: 768px)">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles-media.css') }}" media="screen and (max-width: 767px)">
+</head>
+<body>
+    <!-- Banner con menú integrado -->
+    <header class="banner">
+        <div class="banner-content">
+            <h1 class="banner-title">B DE BLOG</h1>
+            <nav class="banner-menu">
+                <button class="menu-button" onclick="location.href='/'">Home</button>
+                <button class="menu-button" onclick="location.href='/historias'">Historias</button>
+                <button class="menu-button" onclick="location.href='/resenas'">Reseñas</button>
+            </nav>
+        </div>
+        <img src="{{ url_for('static', filename='guyfox.webp') }}" alt="Blog Logo" class="banner-image">
+    </header>
+    
+    <div class="container">
+        <h2 class="story-title">El psicoanalista</h2>
+        <div class="story-text">
+            
+            <p>John Katzenbach nos ofrece en <em>El psicoanalista</em> una premisa que promete. Un doctor en mente humana obligado a jugar un juego mortal. Todo suena bien hasta que a mitad del libro, el psicoanalista parece olvidarse de Freud y se convierte, de la nada, en una mezcla entre Rambo y Sherlock Holmes.</p>
+
+            <p>El arranque es intrigante, pero el ritmo se diluye en capítulos que se sienten eternos, y el desenlace termina enredado en situaciones poco creíbles. De terapia de diván pasamos a planes de persecución estilo película de acción.</p>
+            
+            <p>Sinceramente no me gustó, pero sí crea buena tensión al principio. Léelo si no tienes nada mejor que hacer. Aprenderás una que otra teoría del psicoanálisis interesante y una que otra palabra nueva.</p>
+            
+            <p>Calificación final:<br>
+            ⭐⭐⭐ (3/5)</p>
+            <p class="story-author">Ing. Wilson Felipe Martínez Barrantes.</p>
+
+        </div>
+
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='psicoanalista.png') }}" alt="psicoanalista" class="story-image">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trilogia cosmica</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='guyfox.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" media="screen and (min-width: 768px)">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles-media.css') }}" media="screen and (max-width: 767px)">
+</head>
+<body>
+    <!-- Banner con menú integrado -->
+    <header class="banner">
+        <div class="banner-content">
+            <h1 class="banner-title">B DE BLOG</h1>
+            <nav class="banner-menu">
+                <button class="menu-button" onclick="location.href='/'">Home</button>
+                <button class="menu-button" onclick="location.href='/historias'">Historias</button>
+                <button class="menu-button" onclick="location.href='/resenas'">Reseñas</button>
+            </nav>
+        </div>
+        <img src="{{ url_for('static', filename='guyfox.webp') }}" alt="Blog Logo" class="banner-image">
+    </header>
+    
+    <div class="container">
+        <h2 class="story-title">Trilogía cosmica</h2>
+        <div class="story-text">
+            
+            <p>La <em>Trilogía Cósmica</em> de C.S. Lewis, compuesta por <em>Más allá del planeta silencioso</em>, <em>Perelandra</em> y <em>Esa horrible fortaleza</em>, es una obra que mezcla ciencia ficción con una profunda reflexión teológica. A lo largo de estos tres libros, Lewis nos invita a pensar sobre el bien, el mal y el destino del ser humano, todo ello ambientado en escenarios extraterrestres fascinantes.</p>
+
+            <p>Estos libros son una verdadera joya literaria. Como muchos saben, Lewis es también el creador de <em>Las Crónicas de Narnia</em>. Un amigo me recomendó esta trilogía y, al terminarla, comprendí la importancia de los libros en la humanidad. Lewis es un visionario, algo así como Julio Verne, aunque menos centrado en la ciencia y más en lo espiritual.</p>
+            
+            <p>En esta trilogía, seguimos a Ransom, nuestro héroe, en tres aventuras muy distintas:</p>
+            
+            <p>En el primer libro, Ransom llega a un planeta que no ha conocido el pecado.</p>
+            
+            <p>En el segundo, debe evitar que el mal tiente a un ser alienígena en un planeta aún inocente.</p>
+            
+            <p>En el tercero, la acción regresa a la Tierra, donde se desarrolla una conspiración que explora el poder del mal en el mundo humano.</p>
+            
+            <p>Lewis nos muestra la eterna batalla entre el bien y el mal, planteando preguntas sobre sus orígenes y manifestaciones. De los tres libros, mi favorito es el segundo, donde se libra una batalla filosófica impresionante. Las ideas que Lewis expone son sublimes, y la manera en que justifica su tesis es magistral. El primer libro también me pareció excelente, sirviendo como una base necesaria para conectar con el segundo. Por otro lado, el tercero, aunque fascinante, tiene un tono distinto.</p>
+            
+            <p>Si buscas una lectura diferente, profunda, que te haga pensar sobre los secretos del bien y el mal en el mundo, esta trilogía es para ti. Y si aún no te he convencido, recuerda que C.S. Lewis fue íntimo amigo del legendario J.R.R. Tolkien. ¡Así que no lo dudes y dale una oportunidad!</p>
+            
+            
+            <p>⭐⭐⭐⭐⭐ (5/5)</p>
+            <p class="story-author">Ing. Wilson Felipe Martínez Barrantes.</p>
+
+        </div>
+
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='trilogia_cosmica.webp') }}" alt="El Sol Oscurecido" class="story-image">
+        </div>
+    </div>
+</body>
+</html>

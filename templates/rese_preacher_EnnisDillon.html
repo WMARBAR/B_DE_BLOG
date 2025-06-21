@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predicador</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='guyfox.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" media="screen and (min-width: 768px)">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles-media.css') }}" media="screen and (max-width: 767px)">
+</head>
+<body>
+    <!-- Banner con menú integrado -->
+    <header class="banner">
+        <div class="banner-content">
+            <h1 class="banner-title">B DE BLOG</h1>
+            <nav class="banner-menu">
+                <button class="menu-button" onclick="location.href='/'">Home</button>
+                <button class="menu-button" onclick="location.href='/historias'">Historias</button>
+                <button class="menu-button" onclick="location.href='/resenas'">Reseñas</button>
+            </nav>
+        </div>
+        <img src="{{ url_for('static', filename='guyfox.webp') }}" alt="Blog Logo" class="banner-image">
+    </header>
+    
+    <div class="container">
+        <h2 class="story-title">Predicador</h2>
+        <div class="story-text">
+            <p>Dos veces me he leído esta fascinante historia. La primera fue cuando era apenas un joven en el colegio, y la segunda en 2024, ya con 29 años. Y sé que volveré a leerla más adelante.</p>
+
+            <p>Qué historia tan cruda, tan genial. Con personajes complejos y perfectamente desarrollados, <em>Predicador</em> nos presenta un trío inolvidable, una asesina a sueldo, un vampiro alcohólico y un predicador con una misión aparentemente absurda: buscar a Dios para hacerlo rendir cuentas ante la humanidad. ¿Ilusos? Para nada. Porque el predicador ha sido poseído por el único ser en el cosmos que Dios teme: Génesis, un bebé mitad ángel y mitad demonio que le otorga el poder de usar "La Palabra", una habilidad que obliga a cualquiera a obedecer cualquier orden que pronuncie. Si el predicador te ordena contar la arena de la playa, no podrás parar hasta terminar. Por lo tanto, planea utilizar este poder en contra del Todopoderoso.</p>
+            
+            <p>Garth Ennis es un autor que no se guarda nada. Te muestra la putrefacción del mundo sin filtros, en cada viñeta, en cada situación, y te hace enfrentarte a esa pregunta incómoda que muchos evitan: <em>¿Será que Dios nos ha abandonado?</em></p>
+            
+            <p>Cuando era más joven pensaba que Dios era una figura que premiaba o castigaba según tus actos. Pero con el tiempo entendí algo distinto, ¿de verdad un ser todopoderoso va a sufrir o a alegrarse por lo que tú hagas? Dios está más allá de eso. Nosotros, apenas polvo de estrellas, somos insignificantes ante la grandeza del universo. Qué ingenuos somos al asignarle a Dios características humanas.</p>
+            
+            <p>Sé bueno. Ama. Pero no lo hagas esperando una recompensa divina o temiendo un castigo eterno. Hazlo porque es lo correcto. Porque no hay nadie más que tú para decidir quién quieres ser. Y no esperes palmaditas en la espalda por ello.</p>
+            
+            <p><em>Predicador</em> nos hace testigos de la gran tragedia que sería vivir en un mundo donde Dios no es justo, ni sabio, ni compasivo… sino vanidoso, orgulloso y cobarde. Y aun así, en medio del caos, hay personajes que deciden hacer lo correcto. No porque alguien los vigile. Sino porque simplemente creen en algo mejor.</p>
+            
+            <p>Una novela gráfica perfecta. Te la súper recomiendo.</p>
+            
+            <p>Calificación final:<br>
+            ⭐⭐⭐⭐⭐ (5/5)</p>
+            <p class="story-author">Ing. Wilson Felipe Martínez Barrantes.</p>
+
+        </div>
+
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='preacher.png') }}" alt="preacher" class="story-image">
+        </div>
+    </div>
+</body>
+</html>

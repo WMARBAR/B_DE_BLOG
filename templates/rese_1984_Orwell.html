@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1984</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='guyfox.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" media="screen and (min-width: 768px)">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles-media.css') }}" media="screen and (max-width: 767px)">
+</head>
+<body>
+    <!-- Banner con menú integrado -->
+    <header class="banner">
+        <div class="banner-content">
+            <h1 class="banner-title">B DE BLOG</h1>
+            <nav class="banner-menu">
+                <button class="menu-button" onclick="location.href='/'">Home</button>
+                <button class="menu-button" onclick="location.href='/historias'">Historias</button>
+                <button class="menu-button" onclick="location.href='/resenas'">Reseñas</button>
+            </nav>
+        </div>
+        <img src="{{ url_for('static', filename='guyfox.webp') }}" alt="Blog Logo" class="banner-image">
+    </header>
+    
+    <div class="container">
+        <h2 class="story-title">1984</h2>
+        <div class="story-text">
+            
+            <p>En un mundo dominado por un régimen totalitario, el amor se convierte en revolución.</p>
+            <p>Orwell, quien escribió durante los años del socialismo en Rusia y fue testigo de cómo esos regímenes manipulan a las masas, en esta novela expone un sistema que controla cada segundo de la vida de sus ciudadanos y es imposible escapar. Lo más aterrador es que es un sistema perpetuo, ya que incluso sus detractores terminan siendo absorbidos por el mismo.</p>
+            <p>1984 es una novela que debes leer para comprender que los mensajes que vemos y oímos están cargados de intenciones, y no siempre son benignas.</p>
+            
+            <p>Calificación final:<br>
+            ⭐⭐⭐⭐⭐ (5/5)</p>
+            <p class="story-author">Ing. Wilson Felipe Martínez Barrantes.</p>
+
+        </div>
+
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='1984.png') }}" alt="Vuelta80" class="story-image">
+        </div>
+    </div>
+</body>
+</html>

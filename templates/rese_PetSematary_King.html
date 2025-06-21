@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cementerio de mascotas</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='guyfox.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" media="screen and (min-width: 768px)">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles-media.css') }}" media="screen and (max-width: 767px)">
+</head>
+<body>
+    <!-- Banner con menú integrado -->
+    <header class="banner">
+        <div class="banner-content">
+            <h1 class="banner-title">B DE BLOG</h1>
+            <nav class="banner-menu">
+                <button class="menu-button" onclick="location.href='/'">Home</button>
+                <button class="menu-button" onclick="location.href='/historias'">Historias</button>
+                <button class="menu-button" onclick="location.href='/resenas'">Reseñas</button>
+            </nav>
+        </div>
+        <img src="{{ url_for('static', filename='guyfox.webp') }}" alt="Blog Logo" class="banner-image">
+    </header>
+    
+    <div class="container">
+        <h2 class="story-title">Cementerio de mascotas</h2>
+        <div class="story-text">
+            
+            <p>Hay que tener estómago para leer a King, te lo advierto desde ya. Este libro es una joya del terror, y más de una vez te va a sacar un buen susto.</p>
+
+            <p>Más allá del terrible cementerio indio y el terror sobrenatural, lo que realmente hace que esta novela sea aterradora es lo escalofriantemente mundana que resulta. Las situaciones que plantea son tan cotidianas, tan posibles, que podrían pasarle a cualquiera.</p>
+            
+            <p>El ambiente oscuro que envuelve la historia lo sentirás como una sombra constante. Siempre hay algo ahí, acechando en cada página.</p>
+            
+            <p>Tuve la fortuna de no haber visto ninguna de las adaptaciones al cine antes de leerlo. Empecé por el libro, y decidí quedarme con él. Los personajes que imaginé son mucho más interesantes que los que muestran en las películas. Incluso el final del libro es muy superior a la aberración que hicieron en el remake.</p>
+            
+            <p>No te voy a contar nada de la trama, así podrás disfrutarla sin saber mucho. Confía en mí. Te va a gustar.</p>
+            
+            
+            <p>Calificación final:<br>
+            ⭐⭐⭐⭐⭐ (5/5)</p>
+            <p class="story-author">Ing. Wilson Felipe Martínez Barrantes.</p>
+
+        </div>
+
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='PetSematary.png') }}" alt="petsematary" class="story-image">
+        </div>
+    </div>
+</body>
+</html>

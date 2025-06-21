@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transmetropolitan</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='guyfox.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" media="screen and (min-width: 768px)">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles-media.css') }}" media="screen and (max-width: 767px)">
+</head>
+<body>
+    <!-- Banner con menú integrado -->
+    <header class="banner">
+        <div class="banner-content">
+            <h1 class="banner-title">B DE BLOG</h1>
+            <nav class="banner-menu">
+                <button class="menu-button" onclick="location.href='/'">Home</button>
+                <button class="menu-button" onclick="location.href='/historias'">Historias</button>
+                <button class="menu-button" onclick="location.href='/resenas'">Reseñas</button>
+            </nav>
+        </div>
+        <img src="{{ url_for('static', filename='guyfox.webp') }}" alt="Blog Logo" class="banner-image">
+    </header>
+    
+    <div class="container">
+        <h2 class="story-title">Transmetropolitan</h2>
+        <div class="story-text">
+            
+            <p>Si crees que ser periodista es simplemente contar chismes, tienes que leer esta asombrosa novela gráfica para darte cuenta de lo equivocado que estás.</p>
+
+            <p>Seguirás la historia de <strong>Spider Jerusalem</strong>, un periodista tan irreverente como comprometido, que no duda en arriesgar su integridad física con tal de exponer la verdad. Lo acompañan sus dos inseparables asistentes: <strong>Channon Yarrow</strong>, una periodista por vocación con un carácter afilado como su pluma, y <strong>Yelena Rossini</strong>, quien al principio solo está allí por obligación, pero acaba descubriendo que el periodismo también corre por sus venas, inspirada por su excéntrico y brutalmente honesto mentor.</p>
+            
+            <p>Juntos se embarcan en una misión para destapar la corrupción de un candidato presidencial conocido como <em>El Risas</em>, un personaje tan grotesco como aterrador.</p>
+            
+            <p>La historia transcurre en una ciudad futurista, caótica y abrumadoramente tecnológica, donde el ruido visual es constante, la publicidad lo invade todo y la información circula como una plaga imposible de contener. En este entorno ultramoderno, la humanidad ha alcanzado avances impensables, pero también ha caído en nuevas formas de decadencia.</p>
+            
+            <p>Se nos presentan dilemas éticos y sociales intensamente actuales: desde la integración de prótesis robóticas como símbolo de libertad individual, hasta un exceso ridículo de religiones inventadas, muchas de ellas más negocio que fe, y una sociedad donde las drogas son legales, variadas y parte del día a día. Un mundo donde el progreso convive con la miseria moral y donde la verdad necesita guerreros como Spider para no ser enterrada bajo capas de manipulación mediática.</p>
+            
+            <p><strong>Transmetropolitan</strong> no solo es una crítica brutal al poder y a los medios, también es una sacudida al cinismo y una defensa rabiosa de la verdad.</p>
+            
+            <p>Calificación final:<br>
+            ⭐⭐⭐⭐⭐ (5/5)</p>
+            <p class="story-author">Ing. Wilson Felipe Martínez Barrantes.</p>
+
+        </div>
+
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='transmetropolitan.png') }}" alt="transmetropolitan" class="story-image">
+        </div>
+    </div>
+</body>
+</html>

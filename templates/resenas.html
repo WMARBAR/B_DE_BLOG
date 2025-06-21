@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reseñas</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='guyfox.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" media="screen and (min-width: 768px)">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles-media.css') }}" media="screen and (max-width: 767px)">
+</head>
+<body>
+    <!-- Banner con menú integrado -->
+    <header class="banner">
+        <div class="banner-content">
+            <h1 class="banner-title">B DE BLOG</h1>
+            <nav class="banner-menu">
+                <button class="menu-button" onclick="location.href='/'">Home</button>
+                <button class="menu-button" onclick="location.href='/historias'">Historias</button>
+                <button class="menu-button" onclick="location.href='/resenas'">Reseñas</button>
+            </nav>
+        </div>
+        <img src="{{ url_for('static', filename='guyfox.webp') }}" alt="Blog Logo" class="banner-image">
+    </header>
+
+    <!-- Menú principal debajo del banner -->
+    <div class="menu">
+        <h1 class="menu-title">RESEÑAS</h1>
+        <button class="menu-button" onclick="location.href='/rese_tfundacion_asimov'">Trilogía de la fundación : Isaac Asimov</button>
+        <button class="menu-button" onclick="location.href='/rese_frankenstein_mary'">Frankenstein : Mary Shelly</button>
+        <button class="menu-button" onclick="location.href='/rese_fwtbt_Heminghway'">Por quien doblan las campanas : Heminghway</button>
+        <button class="menu-button" onclick="location.href='/rese_Psicoanalista_Katzenbach'">El psicoanalista :  John Katzenbach</button>    
+        <button class="menu-button" onclick="location.href='/rese_trilogiaCosmica_Lewis'">La trilogía cosmica : C.S. Lewis</button>
+        <button class="menu-button" onclick="location.href='/rese_ElMonje_Sharma'">El monje que vendió su ferrari : Robin Sharma</button>
+        <button class="menu-button" onclick="location.href='/rese_Vuelta80dias_Verne'">La vuelta al mundo en 80 días : Julio Verne</button>
+        <button class="menu-button" onclick="location.href='/rese_1984_Orwell'">1984 : George Orwell</button>
+        <button class="menu-button" onclick="location.href='/rese_JenkyllHyde_Stevenson'">El extraño caso del doctor Jekyll y el señor Hyde : Robert Stevenson</button>
+        <button class="menu-button" onclick="location.href='/rese_NaranjaMecanica_Burgess'">La naranja mecánica : Anthony Burgess</button>
+        <button class="menu-button" onclick="location.href='/rese_Kybalion_Hermes'">El KYBALIÓN : TRES INICIADOS</button>
+        <button class="menu-button" onclick="location.href='/rese_Transmetropolitan_WarrenEllis'">Transmetropolitan :  Warren Ellis y Darick Robertson</button>    
+        <button class="menu-button" onclick="location.href='/rese_CrimenCast_FDevsky'">Crimen y castigo : Fiódor Dostoyevski</button>
+        <button class="menu-button" onclick="location.href='/rese_ViajeCentro_Verne'">Viaje al centro de la tierra :  Julio Verne</button>
+        <button class="menu-button" onclick="location.href='/rese_PoderAhora_Eckhart'">El poder del Ahora :  Eckhart Tolle</button>
+        <button class="menu-button" onclick="location.href='/rese_MundoFeliz_Huxley'">Un mundo felíz :  Aldous Huxley</button>
+        <button class="menu-button" onclick="location.href='/rese_preacher_EnnisDillon'">Predicador :  Garth Ennis y Steve Dillon</button>
+        <button class="menu-button" onclick="location.href='/rese_PetSematary_King'">Cementerio de mascotas :  Stephen King</button>          
+        <button class="menu-button" onclick="location.href='/rese_2001Odisea_Cclarke'">2001 Una Odisea Espacial :  Arthur C. Clarke</button>   
+        <button class="menu-button" onclick="location.href='/rese_FightClub_Palaniuk'">El club de la pelea :  Chuck Palahniuk</button> 
+        <button class="menu-button" onclick="location.href='/rese_trenAzul_Agata'">El Misterio del tren azul :  Agatha Christie</button> 
+        <button class="menu-button" onclick="location.href='/rese_SimboloPerdido_Brown'">El símbolo perdido :  Dan Brown</button>   
+        <button class="menu-button" onclick="location.href='/rese_ElHombreMasRicoBabilonia_Clason'">El hombre más rico de babilonia :  George S. Clason</button> 
+        
+        
+    </div>
+
+    <div class="container">
+        <h2 class="story-title"></h2>
+        <p class="story-text"></p>
+    </div>
+</body>
+</html>

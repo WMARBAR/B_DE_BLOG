@@ -1,2 +1,2 @@
-# B_DE_BLOG
-blog de lectura, diario de lectura
+# myPage_WFM
+Desarrollo de una pagina donde subo, escritos y reseñas de libros.

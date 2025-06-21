@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crimen y castigo</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='guyfox.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" media="screen and (min-width: 768px)">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles-media.css') }}" media="screen and (max-width: 767px)">
+</head>
+<body>
+    <!-- Banner con menú integrado -->
+    <header class="banner">
+        <div class="banner-content">
+            <h1 class="banner-title">B DE BLOG</h1>
+            <nav class="banner-menu">
+                <button class="menu-button" onclick="location.href='/'">Home</button>
+                <button class="menu-button" onclick="location.href='/historias'">Historias</button>
+                <button class="menu-button" onclick="location.href='/resenas'">Reseñas</button>
+            </nav>
+        </div>
+        <img src="{{ url_for('static', filename='guyfox.webp') }}" alt="Blog Logo" class="banner-image">
+    </header>
+    
+    <div class="container">
+        <h2 class="story-title">Crimen y castigo</h2>
+        <div class="story-text">
+            <p><strong>Fiódor, Dios, Dostoievski.</strong> Este año, 2025, me prometí seguir leyendo sus obras porque me fascinó la historia de Raskólnikov.</p>
+
+            <p>Dostoievski consigue algo asombroso. Nos mete en la mente de un ser humano como tú o como yo, que está perturbado por las circunstancias de la vida, un tipo al límite que encuentra una salida en el asesinato, el peor pecado que un ser humano puede cometer contra otro. Pero lo más increíble es que, al final, hay una forma de redención.</p>
+            
+            <p>El peor castigo por un pecado no siempre es la cárcel. A veces, es simplemente vivir con él. Cargarlo, día tras día.</p>
+            
+            <p>Este libro me hizo preguntarme:</p>
+            
+            <p><em>¿Será que aquellas personas que han cometido actos horribles contra la humanidad tienen una conciencia que los aplasta cada día?</em></p>
+            
+            <p>Un solo asesinato llevó a Raskólnikov casi a la locura.</p>
+            
+            <p>Al final, la vida le ofrece una oportunidad para redimirse. ¿Cómo? Tienes que averiguarlo por ti mismo. Solo te diré que, en el fondo, él lo estaba buscando. Sabía lo que había hecho y, de alguna forma, quería que las cosas mejoraran.</p>
+            
+            <p><strong>Léelo.</strong></p>
+
+            <p>Calificación final:<br>
+            ⭐⭐⭐⭐⭐ (5/5)</p>
+            <p class="story-author">Ing. Wilson Felipe Martínez Barrantes.</p>
+
+        </div>
+
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='CrimenCastigo.png') }}" alt="Vuelta80" class="story-image">
+        </div>
+    </div>
+</body>
+</html>

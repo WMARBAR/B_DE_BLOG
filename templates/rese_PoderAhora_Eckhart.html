@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El poder del ahora</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='guyfox.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" media="screen and (min-width: 768px)">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles-media.css') }}" media="screen and (max-width: 767px)">
+</head>
+<body>
+    <!-- Banner con menú integrado -->
+    <header class="banner">
+        <div class="banner-content">
+            <h1 class="banner-title">B DE BLOG</h1>
+            <nav class="banner-menu">
+                <button class="menu-button" onclick="location.href='/'">Home</button>
+                <button class="menu-button" onclick="location.href='/historias'">Historias</button>
+                <button class="menu-button" onclick="location.href='/resenas'">Reseñas</button>
+            </nav>
+        </div>
+        <img src="{{ url_for('static', filename='guyfox.webp') }}" alt="Blog Logo" class="banner-image">
+    </header>
+    
+    <div class="container">
+        <h2 class="story-title">El poder del ahora</h2>
+        <div class="story-text">
+            <p><strong>Queridos lectores</strong>, hay que aprender a valorar el presente, y si hay un libro que enseña a hacerlo, es este.</p>
+
+            <p>Si es tu primer acercamiento a la espiritualidad, te recomiendo que lo dejes para más adelante, cuando ya tengas algo de bagaje en conceptos como el ego, la humildad y la conciencia.</p>
+            
+            <p>Es un libro hermoso y esclarecedor. Contiene un conocimiento tan profundo que me atrevería a decir que, si toda la humanidad pusiera en práctica sus enseñanzas, se acabarían las guerras, la pobreza, incluso la injusticia.</p>
+            
+            <p>Y si no me crees, te invito a leerlo, y te juro que, cuando lo termines, <strong>no vas a ser el mismo</strong>.</p>
+            
+            <p>Calificación final:<br>
+            ⭐⭐⭐⭐⭐ (5/5)</p>
+            <p class="story-author">Ing. Wilson Felipe Martínez Barrantes.</p>
+
+        </div>
+
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='poderAhora.png') }}" alt="poderAhora" class="story-image">
+        </div>
+    </div>
+</body>
+</html>

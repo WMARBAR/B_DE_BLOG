@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fwtbt</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='guyfox.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" media="screen and (min-width: 768px)">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles-media.css') }}" media="screen and (max-width: 767px)">
+</head>
+<body>
+    <!-- Banner con menú integrado -->
+    <header class="banner">
+        <div class="banner-content">
+            <h1 class="banner-title">B DE BLOG</h1>
+            <nav class="banner-menu">
+                <button class="menu-button" onclick="location.href='/'">Home</button>
+                <button class="menu-button" onclick="location.href='/historias'">Historias</button>
+                <button class="menu-button" onclick="location.href='/resenas'">Reseñas</button>
+            </nav>
+        </div>
+        <img src="{{ url_for('static', filename='guyfox.webp') }}" alt="Blog Logo" class="banner-image">
+    </header>
+    
+    <div class="container">
+        <h2 class="story-title">¿Por quién doblan las campanas?</h2>
+        <div class="story-text">
+
+            <p>Una historia épica ambientada en el contexto de la Guerra Civil Española. Ernest Hemingway nos sumerge en una España convulsa, donde compatriotas se enfrentan entre sí en una lucha fratricida. La ventaja tecnológica de los sublevados es aplastante: cuentan con aviones, mejores armas y combatientes mejor preparados.</p>
+
+            <p>La historia nos presenta a Robert, un profesor y dinamitero —vaya mezcla— que forma parte de las llamadas brigadas internacionales, voluntarios que apoyaban al bando que quería mantener la democracia.</p>
+            
+            <p>La historia sigue la vida de Robert durante la guerra civil española, mientras planea la detonación de un puente. Esta acción puede parecer inútil en el gran esquema de las cosas ya que, como espectadores, conocemos el desenlace de la guerra. Es precisamente ese contraste lo que hace que la narrativa sea tan poderosa. Nuestro protagonista se sitúa en el bando perdedor, intensificando la tragedia y el peso emocional de sus decisiones.</p>
+            
+            <p>Los personajes son variados, y si tuviera que escoger uno, me quedaría con el viejo Anselmo. Un hombre que odia la guerra y la muerte, pero que aun así lucha por proteger a sus camaradas.</p>
+            
+            <p>La historia de María es desgarradora y logra mostrar lo vulnerables que somos cuando empezamos a ser juzgados por fanáticos.</p>
+            
+            <p>Ernest Hemingway es un maestro de los recursos narrativos. En este libro encontrarás escenas que te estremecerán, te harán gritar y, quizás, llorar. Un drama bélico imperdible.</p>
+            
+            <p>Calificación final ⭐⭐⭐⭐⭐  (5/5)</p>
+            <p class="story-author">Ing. Wilson Felipe Martínez Barrantes.</p>
+
+        </div>
+
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='fwtbt.webp') }}" alt="El Sol Oscurecido" class="story-image">
+        </div>
+    </div>
+</body>
+</html>

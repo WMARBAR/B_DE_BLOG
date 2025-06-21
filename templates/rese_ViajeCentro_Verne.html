@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viaje al centro de la tierra</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='guyfox.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" media="screen and (min-width: 768px)">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles-media.css') }}" media="screen and (max-width: 767px)">
+</head>
+<body>
+    <!-- Banner con menú integrado -->
+    <header class="banner">
+        <div class="banner-content">
+            <h1 class="banner-title">B DE BLOG</h1>
+            <nav class="banner-menu">
+                <button class="menu-button" onclick="location.href='/'">Home</button>
+                <button class="menu-button" onclick="location.href='/historias'">Historias</button>
+                <button class="menu-button" onclick="location.href='/resenas'">Reseñas</button>
+            </nav>
+        </div>
+        <img src="{{ url_for('static', filename='guyfox.webp') }}" alt="Blog Logo" class="banner-image">
+    </header>
+    
+    <div class="container">
+        <h2 class="story-title">Viaje al centro de la tierra</h2>
+        <div class="story-text">
+            
+            <p>Otra vez Julio Verne por aquí y, ¿cómo no iba a leer <em>Viaje al centro de la Tierra</em>? Solo la premisa ya es intrigante.</p>
+
+            <p>Resulta que Otto Lidenbrock, un excéntrico científico, y su sobrino Axel se embarcan en un viaje épico hacia las entrañas del planeta, después de que Otto descubre un antiguo manuscrito que revela la existencia de un túnel que conduce al centro de la Tierra.</p>
+            
+            <p>Así es, Julio Verne plantea esta extraña, y ya desmentida, teoría de que existe una tierra dentro de la Tierra. En la vida real, si intentáramos semejante hazaña, quedaríamos aplastados por la presión del planeta. Sin embargo, en la historia de Verne, ese mundo subterráneo está lleno de cavernas gigantescas, criaturas prehistóricas y una biología completamente distinta.</p>
+            
+            <p>El viaje es <strong>epiquísimo</strong>, y lo complementa Hans, mi personaje favorito. Un tipo silencioso, fuerte y siempre confiable. Sin él, la expedición no habría llegado muy lejos.</p>
+            
+            <p>¿Qué esperas para dejarte llevar por uno de los viajes más difíciles y fascinantes de tu vida?</p>
+            
+            <p>Calificación final:<br>
+            ⭐⭐⭐⭐⭐ (5/5)</p>
+            <p class="story-author">Ing. Wilson Felipe Martínez Barrantes.</p>
+
+        </div>
+
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='CentroTierra.png') }}" alt="Vuelta80" class="story-image">
+        </div>
+    </div>
+</body>
+</html>

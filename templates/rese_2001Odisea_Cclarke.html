@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2001 Una Odisea Espacial</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='guyfox.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" media="screen and (min-width: 768px)">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles-media.css') }}" media="screen and (max-width: 767px)">
+</head>
+<body>
+    <!-- Banner con menú integrado -->
+    <header class="banner">
+        <div class="banner-content">
+            <h1 class="banner-title">B DE BLOG</h1>
+            <nav class="banner-menu">
+                <button class="menu-button" onclick="location.href='/'">Home</button>
+                <button class="menu-button" onclick="location.href='/historias'">Historias</button>
+                <button class="menu-button" onclick="location.href='/resenas'">Reseñas</button>
+            </nav>
+        </div>
+        <img src="{{ url_for('static', filename='guyfox.webp') }}" alt="Blog Logo" class="banner-image">
+    </header>
+    
+    <div class="container">
+        <h2 class="story-title">2001 Una Odisea Espacial</h2>
+        <div class="story-text">
+            
+            <p>¿Estamos realmente solos en el universo?, ¿Acaso fuimos influenciados, en algún punto de nuestra evolución, por seres superiores más allá de nuestra comprensión?</p>
+
+            <p>Aunque parezca increíble, este libro intenta dar una respuesta, desde la ciencia ficción, a esas preguntas, y a la vez nos lanza otras nuevas y más inquietantes.</p>
+            
+            <p>Una de ellas: ¿sería sensato dejar nuestro destino en manos de una inteligencia artificial?</p>
+            
+            <p>A lo largo de la novela, nos encontramos con HAL, una IA diseñada para asistir a los humanos pero que comienza a mostrar fallos. Lo perturbador es que sus fallos no son simples errores técnicos, sino decisiones que cruzan límites morales.</p>
+            
+            <p>Clarke no solo nos lleva a un viaje interestelar, también nos sumerge en reflexiones sobre nuestra propia humanidad, el avance tecnológico y los misterios que podrían estar más allá de las estrellas.</p>
+            
+            <p>Es una obra que mezcla ciencia, filosofía y una atmósfera de asombro constante. Una lectura que, sin duda, deja huella.</p>
+            
+            <p>Debo admitir que me acerqué al libro impulsado por la sensación de desconcierto que me dejó la película de Kubrick. La primera vez que la vi, no supe qué pensar. Fue como asistir a un recital de música clásica acompañado de imágenes cósmicas: hipnóticas, hermosas, pero también profundamente crípticas. A medida que avanzaba, la película se volvía más densa, más introspectiva, como si intentara comunicar algo que no podía ser dicho con palabras, algo que solo podía intuirse o sentirse en lo más profundo.</p>
+            
+            <p>Necesitaba entender más. Así que tomé el libro.</p>
+            
+            <p>Mi parte favorita, y una que nunca voy a poder sacar de mi mente, es el amanecer de la humanidad, esa primera sección. La disfruté profundamente tanto en la película como en la novela. Es un capítulo cargado de significados: la guerra primitiva, la supervivencia del más apto y, por encima de todo, el poder transformador del conocimiento.</p>
+            
+            <p>Si eres amante de la ciencia ficción, ¿qué esperas para darle una oportunidad a este clásico?</p>
+            
+            
+            <p>Calificación final:<br>
+            ⭐⭐⭐⭐⭐ (5/5)</p>
+            <p class="story-author">Ing. Wilson Felipe Martínez Barrantes.</p>
+
+        </div>
+
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='2001EO.png') }}" alt="2001EO" class="story-image">
+        </div>
+    </div>
+</body>
+</html>

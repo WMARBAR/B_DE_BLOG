@@ -1,0 +1,205 @@
+/* General */
+@import url('https://fonts.googleapis.com/css2?family=Chiller&display=swap');
+
+body {
+    font-family: 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+/* 📌 Banner fijo */
+.banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* 📌 Contenedor del título y menú */
+.banner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* 📌 Título del banner */
+.banner-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* 📌 Logo */
+.banner-image {
+    height: 40px;
+    width: auto;
+    margin-top: 8px;
+}
+
+/* 📌 Menú principal */
+.banner-menu {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+/* 📌 Botones del menú */
+.menu-button {
+    font-family: 'Chiller', cursive;
+    font-size: 16px;
+    padding: 8px 15px;
+    background-color: #fff;
+    color: #000;
+    border: 2px solid #000;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu-button:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* 📌 Ajuste para que los botones de historias no queden ocultos */
+.menu {
+    text-align: center;
+    margin-top: 180px;
+}
+
+/* 📌 Botones de historias */
+.menu .menu-button {
+    display: block;
+    width: 90%;
+    max-width: 400px;
+    margin: 10px auto;
+    font-size: 18px;
+    padding: 12px;
+}
+
+/* 📌 Contenedor de la historia */
+.container {
+    width: 95%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 15px;
+    text-align: center;
+    margin-top: 220px;
+}
+
+/* 📌 Texto de la historia justificado */
+.story-text {
+    text-align: justify;
+    line-height: 1.8;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    font-size: 18px;
+}
+
+/* 📌 Contenedor de la imagen */
+.image-container {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* 📌 Imagen responsiva */
+.story-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* 📌 Contenedor de "¡Bienvenidos!" */
+.menu-container {
+    text-align: center;
+    margin-top: 220px; /* 📌 Asegura que no quede oculto */
+}
+
+/* 📌 Estilo del texto "¡Bienvenidos!" */
+.menu-title {
+    font-family: 'Chiller', cursive;
+    font-size: 50px;
+    color: #000; /* 📌 Asegura que el texto sea visible */
+    margin: 20px 0;
+    text-align: center;
+    width: 100%;
+}
+
+/* 📌 Ajustes en móviles */
+@media (max-width: 768px) {
+    .banner {
+        padding: 10px;
+    }
+
+    .banner-title {
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+
+    .banner-image {
+        height: 35px;
+        margin-bottom: 8px;
+    }
+
+    .banner-menu {
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 12px;
+    }
+
+    .menu-button {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+
+    /* 📌 Asegurar que los botones de historias sean visibles */
+    .menu {
+        margin-top: 200px;
+    }
+
+    /* 📌 Espacio extra para el contenido */
+    .container {
+        margin-top: 250px;
+    }
+
+    /* 📌 Justificar el texto en móviles */
+    .story-text {
+        text-align: justify;
+        font-size: 16px;
+    }
+
+    /* 📌 Ajustar la imagen para móviles */
+    .story-image {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* 📌 Asegurar que "¡Bienvenidos!" sea visible en móviles */
+    .menu-container {
+        margin-top: 250px;
+    }
+
+    .menu-title {
+        font-size: 40px;
+    }
+}

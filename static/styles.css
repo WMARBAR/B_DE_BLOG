@@ -1,0 +1,147 @@
+/* General */
+@import url('https://fonts.googleapis.com/css2?family=Chiller&display=swap');
+
+body {
+    font-family: 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+/* Banner fijo en la parte superior */
+.banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    z-index: 1000; /* Asegura que esté por encima del contenido */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para separar del contenido */
+}
+
+/* Contenedor del título y menú en el banner */
+.banner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+/* Título del banner */
+.banner-title {
+    font-size: 50px;
+    font-weight: bold;
+    margin: 0;
+    text-align: right;
+}
+
+/* Logo del banner */
+.banner-image {
+    height: 120px;
+    width: auto;
+    margin-left: 20px;
+}
+
+/* Menú dentro del banner */
+.banner-menu {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+/* Botones del menú */
+.menu-button {
+    font-family: 'Chiller', cursive;
+    font-size: 24px;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #000;
+    border: 2px solid #000;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu-button:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Contenedor del menú principal */
+.menu-container {
+    text-align: center;
+    margin-top: 160px; /* Ajusta este valor según sea necesario */
+}
+
+.menu-title {
+    font-family: 'Chiller', cursive;
+    font-size: 120px;
+    color: #000;
+    margin: 20px 0;
+    text-align: center;
+    width: 100%;
+}
+
+/* Ajuste del contenido para evitar ser tapado por el menú fijo */
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    margin-top: 120px; /* Evita que el contenido quede cubierto por el menú */
+}
+
+/* Título de la historia */
+.story-title {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Texto de la historia */
+.story-text {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: justify;
+    padding: 20px;
+    line-height: 1.8;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    font-size: 18px; /* Ajuste para mejorar la legibilidad */
+}
+
+/* Contenedor de la imagen */
+.image-container {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Imágenes dentro de la historia */
+.story-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.story-author {
+    font-style: italic;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 20px;
+}

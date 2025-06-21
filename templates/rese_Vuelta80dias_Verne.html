@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La vuelta al mundo en 80 días</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='guyfox.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" media="screen and (min-width: 768px)">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles-media.css') }}" media="screen and (max-width: 767px)">
+</head>
+<body>
+    <!-- Banner con menú integrado -->
+    <header class="banner">
+        <div class="banner-content">
+            <h1 class="banner-title">B DE BLOG</h1>
+            <nav class="banner-menu">
+                <button class="menu-button" onclick="location.href='/'">Home</button>
+                <button class="menu-button" onclick="location.href='/historias'">Historias</button>
+                <button class="menu-button" onclick="location.href='/resenas'">Reseñas</button>
+            </nav>
+        </div>
+        <img src="{{ url_for('static', filename='guyfox.webp') }}" alt="Blog Logo" class="banner-image">
+    </header>
+    
+    <div class="container">
+        <h2 class="story-title">La vuelta al mundo en 80 días</h2>
+        <div class="story-text">
+            
+            <p>Julio Verne me fascina; sus obras son simplemente perfectas. "La vuelta al mundo en 80 días" me atrapó durante una semana entera; es una historia tan épica que madrugaba solo para descubrir cómo terminaría todo. Esta novela es un verdadero ejemplo de un clásico bien logrado.</p>
+            <p>Este párrafo te hará querer leerla:</p>
+            <p>"Ninguno, se dirá. A no ser que se considere como tal la unión con una encantadora mujer, que, por inverosímil que parezca, lo convirtió en el más feliz de los hombres. Y, en realidad, ¿no daría uno la vuelta al mundo por mucho menos que eso?"</p>
+            <p>El protagonista es Phileas Fogg, un excéntrico que apuesta con sus amigos que puede dar la vuelta al mundo en ochenta días. Esto sería sencillo hoy en día; si tienes dinero, simplemente compras unos cuantos boletos de avión y podrías incluso lograrlo en menos tiempo. Pero a finales del siglo diecinueve, cuando la aviación aún no existía, ¿sería realmente posible? Los medios de locomoción eran principalmente ferrocarriles y vapores transatlánticos. ¿Logrará Fogg ganar la apuesta? Léelo, te gustará. Ah, y por cierto, que no te engañen, jamás se utilizó un globo en el viaje.</p>
+            
+            <p>Calificación final:<br>
+            ⭐⭐⭐⭐⭐ (5/5)</p>
+            <p class="story-author">Ing. Wilson Felipe Martínez Barrantes.</p>
+
+        </div>
+
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='Vuelta80Dias.png') }}" alt="Vuelta80" class="story-image">
+        </div>
+    </div>
+</body>
+</html>

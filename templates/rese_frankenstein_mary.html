@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frankenstein</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='guyfox.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" media="screen and (min-width: 768px)">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles-media.css') }}" media="screen and (max-width: 767px)">
+</head>
+<body>
+    <!-- Banner con menú integrado -->
+    <header class="banner">
+        <div class="banner-content">
+            <h1 class="banner-title">B DE BLOG</h1>
+            <nav class="banner-menu">
+                <button class="menu-button" onclick="location.href='/'">Home</button>
+                <button class="menu-button" onclick="location.href='/historias'">Historias</button>
+                <button class="menu-button" onclick="location.href='/resenas'">Reseñas</button>
+            </nav>
+        </div>
+        <img src="{{ url_for('static', filename='guyfox.webp') }}" alt="Blog Logo" class="banner-image">
+    </header>
+    
+    <div class="container">
+        <h2 class="story-title">Frankenstein</h2>
+        <div class="story-text">
+
+            <p>Mary Shelley nos sumerge en la mente turbulenta y obsesiva de Víctor Frankenstein, un científico ambicioso que desafía los límites de la ciencia y la moral para lograr lo impensable, crear vida.</p>
+            <p>En su afán por trascender la mortalidad humana, Frankenstein ensambla un ser a partir de partes de cadáveres.</p>
+            <p>Shelley nos confronta con las consecuencias éticas de la ciencia descontrolada y explora la compleja relación entre creador y criatura, cuestionando la esencia misma de la humanidad y la responsabilidad moral inherente al poder creador.</p>
+            <p>Es como estar leyendo una versión bizarra del Génesis. Un clásico que no debe faltar en nuestras lecturas. Te lo super recomiendo.</p>
+              
+            <p>Calificación final: ⭐⭐⭐⭐⭐  (5/5)</p>
+            <p class="story-author">Ing. Wilson Felipe Martínez Barrantes.</p>
+
+        </div>
+
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='frankenstein.png') }}" alt="El Sol Oscurecido" class="story-image">
+        </div>
+    </div>
+</body>
+</html>
