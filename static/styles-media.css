@@ -145,6 +145,7 @@ body {
     width: 100%;
 }
 
+
 /* 📌 Ajustes en móviles */
 @media (max-width: 768px) {
     .banner {
@@ -201,5 +202,14 @@ body {
 
     .menu-title {
         font-size: 40px;
+    }
+        .menu-description {
+        font-size: 15px;
+        color: #333;
+        max-width: 95%;
+        margin: 10px auto;
+        padding: 0 15px;
+        line-height: 1.6;
+        text-align: justify;
     }
 }
