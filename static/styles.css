@@ -26,8 +26,8 @@ body {
     align-items: center;
     padding: 20px 40px;
     box-sizing: border-box;
-    z-index: 1000; /* Asegura que esté por encima del contenido */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para separar del contenido */
+    z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 /* Contenedor del título y menú en el banner */
@@ -37,7 +37,6 @@ body {
     align-items: flex-end;
 }
 
-/* Título del banner */
 .banner-title {
     font-size: 50px;
     font-weight: bold;
@@ -45,14 +44,13 @@ body {
     text-align: right;
 }
 
-/* Logo del banner */
 .banner-image {
     height: 120px;
     width: auto;
     margin-left: 20px;
 }
 
-/* Menú dentro del banner */
+/* Menú del banner */
 .banner-menu {
     display: flex;
     justify-content: center;
@@ -60,7 +58,6 @@ body {
     margin-top: 10px;
 }
 
-/* Botones del menú */
 .menu-button {
     font-family: 'Chiller', cursive;
     font-size: 24px;
@@ -78,10 +75,10 @@ body {
     color: #fff;
 }
 
-/* Contenedor del menú principal */
+/* Contenido principal */
 .menu-container {
     text-align: center;
-    margin-top: 160px; /* Ajusta este valor según sea necesario */
+    margin-top: 160px;
 }
 
 .menu-title {
@@ -93,17 +90,15 @@ body {
     width: 100%;
 }
 
-/* Ajuste del contenido para evitar ser tapado por el menú fijo */
 .container {
     width: 90%;
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
     text-align: center;
-    margin-top: 120px; /* Evita que el contenido quede cubierto por el menú */
+    margin-top: 120px;
 }
 
-/* Título de la historia */
 .story-title {
     font-size: 36px;
     font-weight: bold;
@@ -111,7 +106,6 @@ body {
     margin-bottom: 20px;
 }
 
-/* Texto de la historia */
 .story-text {
     width: 100%;
     max-width: 800px;
@@ -122,17 +116,15 @@ body {
     word-wrap: break-word;
     overflow-wrap: break-word;
     white-space: normal;
-    font-size: 18px; /* Ajuste para mejorar la legibilidad */
+    font-size: 18px;
 }
 
-/* Contenedor de la imagen */
 .image-container {
     width: 100%;
     text-align: center;
     margin-top: 20px;
 }
 
-/* Imágenes dentro de la historia */
 .story-image {
     max-width: 100%;
     height: auto;
@@ -145,9 +137,10 @@ body {
     text-align: right;
     margin-top: 20px;
 }
+
 .menu-text {
     text-align: center;
-    margin-top: 200px; /* Asegura que esté por debajo del banner */
+    margin-top: 200px;
     color: #000;
     padding: 0 20px;
 }
@@ -158,4 +151,41 @@ body {
     color: #444;
     max-width: 700px;
     margin: 0 auto;
+}
+
+/* Rating visual */
+.rating-container {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.stars-average {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+.star {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/1828/1828970.png'); /* estrella vacía */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.star::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: var(--fill, 0%);
+    background-image: url('https://cdn-icons-png.flaticon.com/512/1828/1828884.png'); /* estrella llena */
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 2;
+    overflow: hidden;
 }

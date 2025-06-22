@@ -1,6 +1,54 @@
 from flask import Flask, render_template
 import os
+from flask import request, jsonify
+import json
 app = Flask(__name__)
+
+def cargar_json():
+    archivo = 'calificaciones.json'
+    if os.path.exists(archivo):
+        with open(archivo, 'r') as f:
+            return json.load(f)
+    return {}
+
+def calcular_promedio(calificaciones, historia):
+    votos_por_ip = calificaciones.get(historia, {})
+    votos = list(votos_por_ip.values())
+    if votos:
+        return round(sum(votos) / len(votos), 2)
+    return 0
+
+
+@app.route('/guardar_calificacion', methods=['POST'])
+def guardar_calificacion():
+    data = request.get_json()
+    historia = data.get('historia')
+    calificacion = int(data.get('calificacion'))
+    ip = request.remote_addr
+
+    archivo = 'calificaciones.json'
+
+    # Cargar calificaciones existentes o crear nuevo diccionario
+    if os.path.exists(archivo):
+        with open(archivo, 'r') as f:
+            calificaciones = json.load(f)
+    else:
+        calificaciones = {}
+
+    # Si no existe la historia, se crea
+    if historia not in calificaciones:
+        calificaciones[historia] = {}
+
+    # Actualizar o insertar la calificación por IP
+    calificaciones[historia][ip] = calificacion
+
+    # Guardar el archivo actualizado
+    with open(archivo, 'w') as f:
+        json.dump(calificaciones, f, indent=4)
+
+    return jsonify({"message": f"¡Gracias! Has calificado con {calificacion} estrella(s)."})
+
+
 
 @app.route('/')
 def home():
@@ -12,7 +60,10 @@ def historias():
 
 @app.route('/H_ElDiaQueElSol')
 def H_ElDiaQueElSol():
-    return render_template('H_ElDiaQueElSol.html')  # Archivo H_ElDiaQueElSol.html
+    calificaciones = cargar_json()  # Función que lee el JSON
+    historia = '/H_ElDiaQueElSol'
+    promedio = calcular_promedio(calificaciones, historia)
+    return render_template('H_ElDiaQueElSol.html', promedio=promedio)
 
 @app.route('/H_eLEco')
 def H_eLEco():

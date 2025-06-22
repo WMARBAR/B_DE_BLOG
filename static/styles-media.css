@@ -145,8 +145,39 @@ body {
     width: 100%;
 }
 
+.rating-container {
+    margin-top: 30px;
+    text-align: center;
+}
 
-/* 📌 Ajustes en móviles */
+.stars {
+    display: inline-block;
+}
+
+.stars span {
+    font-size: 30px;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+/* Al pasar el mouse */
+.stars span:hover,
+.stars span:hover ~ span {
+    color: #ccc; /* Asegura que las de la derecha se mantengan grises */
+}
+
+.stars span:hover,
+.stars span:nth-child(-n+5):hover {
+    color: gold;
+}
+
+/* Estrellas seleccionadas */
+.stars .selected {
+    color: gold;
+}
+
+
 @media (max-width: 768px) {
     .banner {
         padding: 10px;
@@ -203,7 +234,8 @@ body {
     .menu-title {
         font-size: 40px;
     }
-        .menu-description {
+
+    .menu-description {
         font-size: 15px;
         color: #333;
         max-width: 95%;
@@ -211,5 +243,41 @@ body {
         padding: 0 15px;
         line-height: 1.6;
         text-align: justify;
+    }
+
+    /* 🌟 Estrellas personalizadas para calificación */
+    .rating-container {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .stars-average {
+        display: flex;
+        justify-content: center;
+        gap: 6px;
+        margin-top: 10px;
+    }
+
+    .stars-average .star {
+        position: relative;
+        width: 32px;
+        height: 32px;
+        background-image: url('https://cdn-icons-png.flaticon.com/512/1828/1828970.png'); /* estrella vacía */
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .stars-average .star::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: var(--fill, 0%);
+        background-image: url('https://cdn-icons-png.flaticon.com/512/1828/1828884.png'); /* estrella llena */
+        background-size: cover;
+        background-repeat: no-repeat;
+        z-index: 2;
+        overflow: hidden;
     }
 }
