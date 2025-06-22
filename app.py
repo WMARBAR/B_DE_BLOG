@@ -67,11 +67,17 @@ def H_ElDiaQueElSol():
 
 @app.route('/H_eLEco')
 def H_eLEco():
-    return render_template('H_eLEco.html')  # Archivo H_eLEco.html
+    calificaciones = cargar_json()  # Función que lee el JSON
+    historia = '/H_eLEco'
+    promedio = calcular_promedio(calificaciones, historia)
+    return render_template('H_eLEco.html', promedio=promedio)
 
 @app.route('/H_cyberRevuelta')
 def H_cyberRevuelta():
-    return render_template('H_cyberRevuelta.html')  # Archivo H_cyberRevuelta.html
+    calificaciones = cargar_json()  # Función que lee el JSON
+    historia = '/H_cyberRevuelta'
+    promedio = calcular_promedio(calificaciones, historia)
+    return render_template('H_cyberRevuelta.html', promedio=promedio)  # Archivo H_cyberRevuelta.html
 
 @app.route('/resenas')
 def resenas():
