@@ -79,6 +79,14 @@ def H_cyberRevuelta():
     promedio = calcular_promedio(calificaciones, historia)
     return render_template('H_cyberRevuelta.html', promedio=promedio)  # Archivo H_cyberRevuelta.html
 
+
+@app.route('/H_ElAmantePerdido')
+def H_ElAmantePerdido():
+    calificaciones = cargar_json()  # Función que lee el JSON
+    historia = '/H_ElAmantePerdido'
+    promedio = calcular_promedio(calificaciones, historia)
+    return render_template('H_ElAmantePerdido.html', promedio=promedio)  # Archivo H_ElAmantePerdido.html
+
 @app.route('/resenas')
 def resenas():
     return render_template('resenas.html')  # reseñas.html
