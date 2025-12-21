@@ -185,6 +185,10 @@ def rese_SimboloPerdido_Brown():
 def rese_ElHombreMasRicoBabilonia_Clason():
     return render_template('rese_ElHombreMasRicoBabilonia_Clason.html')  # Archivo rese_ElHombreMasRicoBabilonia_Clason
 
+@app.route('/rese_LaMaquinaDelTiempo_HGwells')
+def rese_LaMaquinaDelTiempo_HGwells():
+    return render_template('rese_LaMaquinaDelTiempo_HGwells.html')  # Archivo rese_LaMaquinaDelTiempo_HGwells
+
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))  # Usa el puerto de Render o 5000 por defecto
     app.run(debug=True, host='0.0.0.0', port=port)  # Cambia host a '0.0.0.0'

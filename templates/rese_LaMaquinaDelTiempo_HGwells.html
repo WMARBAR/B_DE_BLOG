@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La maquina del tiempo</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='guyfox.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" media="screen and (min-width: 768px)">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles-media.css') }}" media="screen and (max-width: 767px)">
+</head>
+<body>
+    <!-- Banner con menú integrado -->
+    <header class="banner">
+        <div class="banner-content">
+            <h1 class="banner-title">B DE BLOG</h1>
+            <nav class="banner-menu">
+                <button class="menu-button" onclick="location.href='/'">Home</button>
+                <button class="menu-button" onclick="location.href='/historias'">Historias</button>
+                <button class="menu-button" onclick="location.href='/resenas'">Reseñas</button>
+            </nav>
+        </div>
+        <img src="{{ url_for('static', filename='guyfox.webp') }}" alt="Blog Logo" class="banner-image">
+    </header>
+    
+    <div class="container">
+        <h2 class="story-title">La maquina del tiempo</h2>
+        <div class="story-text">
+            
+        <p>Vivimos en un mundo donde nos movemos con naturalidad en dos dimensiones y, con un poco de esfuerzo y creatividad, también en una tercera. Pero ¿qué pasaría si lográramos dominar una cuarta dimensión, un cuarto movimiento?</p>
+
+        <p><em>La máquina del tiempo</em>, publicada en 1895, plantea precisamente esa posibilidad. La novela narra la historia de un aventurero sin nombre que construye una máquina capaz de desplazarse a través del tiempo. H. G. Wells describe su funcionamiento con gran belleza: el viajero se sienta, acciona el mecanismo y, mientras para él todo parece transcurrir con normalidad, el mundo exterior se acelera vertiginosamente hacia el futuro o hacia el pasado.</p>
+
+        <p>Así llega al año 802.701 d. C., donde decide detenerse para presenciar el supuesto progreso de la humanidad. Sin embargo, pronto pierde su máquina y queda atrapado en un mundo extraño, poblado por criaturas aparentemente dulces e infantiles (los Eloi) y por otros seres más oscuros y cavernosos (los Morlocks). Allí descubre que la humanidad se ha dividido en dos, y que esa nueva naturaleza funciona con una lógica cruel. Quienes habitan la superficie viven con una calma inquietante, pero son mantenidos por los seres subterráneos… que, a su vez, reclaman su carne como alimento.</p>
+
+        <p>¿Podrá el viajero sobrevivir a esa locura? ¿Logrará recuperar su máquina del tiempo? La respuesta está en esta novela corta, tan inquietante como recomendable.</p>
+
+        <p>H. G. Wells plantea una evolución inspirada en las ideas de Darwin. Las clases más acomodadas, acostumbradas durante siglos a ser atendidas, delegan el trabajo y la producción en las clases bajas, que —por las condiciones de la época— pasan buena parte de su vida bajo tierra, en minas, fábricas y túneles.</p>
+
+        <p>Con el tiempo, esa relación se intensifica y se deforma hasta cristalizar en un equilibrio tan estable como inquietante: un futuro donde el progreso se ha vaciado de sentido. La tecnología, la ciencia y el afán de desarrollo se diluyen, y la humanidad retrocede hacia un estado casi primitivo, dividida en dos formas de vida opuestas que ya no se entienden como sociedad, sino como parte de una cadena de supervivencia.</p>
+
+        <p>Una novela que deja un sabor agridulce. Te sacude con su visión oscura del futuro y, al mismo tiempo, te reconcilia con lo que tienes hoy. Cuando cierras el libro, no solo te queda la inquietud: también una gratitud por el presente.</p>
+
+            <p>Calificación final:<br>
+            ⭐⭐⭐⭐⭐ (5/5)</p>
+            <p class="story-author">Ing. Wilson Felipe Martínez Barrantes.</p>
+
+        </div>
+
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='MaquinaDelTiempo.png') }}" alt="TimeMachine" class="story-image">
+        </div>
+    </div>
+</body>
+</html>
