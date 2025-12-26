@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El hotel de los recuerdos</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='guyfox.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" media="screen and (min-width: 768px)">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles-media.css') }}" media="screen and (max-width: 767px)">
+</head>
+<body>
+    <!-- Banner con menú integrado -->
+    <header class="banner">
+        <div class="banner-content">
+            <h1 class="banner-title">B DE BLOG</h1>
+            <nav class="banner-menu">
+                <button class="menu-button" onclick="location.href='/'">Home</button>
+                <button class="menu-button" onclick="location.href='/historias'">Historias</button>
+                <button class="menu-button" onclick="location.href='/resenas'">Reseñas</button>
+            </nav>
+        </div>
+        <img src="{{ url_for('static', filename='guyfox.webp') }}" alt="Blog Logo" class="banner-image">
+    </header>
+    
+    <div class="container">
+        <h2 class="story-title">El hotel de los recuerdos</h2>
+        <div class="story-text">
+            
+        <p>Una bella historia ambientada en la hermosa y pequeña ciudad de Melgar, donde, en un hotel mágico, cobra vida una historia de amor y un complot que te dejará atónito. Mateo es un personaje entrañable, a quien la vida le pone muchas pruebas para su corta edad.</p>
+
+        <p>En solo 120 páginas, Dotatodi construye una historia fantástica que engancha y deja pensando. Sé que la vas a disfrutar. “Te esperamos en el Hotel Fénix Dorado”.</p>
+
+            <p>Calificación final:<br>
+            ⭐⭐⭐⭐⭐ (5/5)</p>
+            <p class="story-author">Ing. Wilson Felipe Martínez Barrantes.</p>
+
+        </div>
+
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='elHDLR.png') }}" alt="TimeMachine" class="story-image">
+        </div>
+    </div>
+</body>
+</html>

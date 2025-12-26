@@ -189,6 +189,13 @@ def rese_ElHombreMasRicoBabilonia_Clason():
 def rese_LaMaquinaDelTiempo_HGwells():
     return render_template('rese_LaMaquinaDelTiempo_HGwells.html')  # Archivo rese_LaMaquinaDelTiempo_HGwells
 
+
+@app.route('/rese_ElHotelDeLosRecuerdos_dotatodi')
+def rese_ElHotelDeLosRecuerdos_dotatodi():
+    return render_template('rese_ElHotelDeLosRecuerdos_dotatodi.html')  # Archivo rese_ElHotelDeLosRecuerdos_dotatodi
+
+
+
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))  # Usa el puerto de Render o 5000 por defecto
     app.run(debug=True, host='0.0.0.0', port=port)  # Cambia host a '0.0.0.0'
