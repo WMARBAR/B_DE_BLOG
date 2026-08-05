@@ -87,6 +87,13 @@ def H_ElAmantePerdido():
     promedio = calcular_promedio(calificaciones, historia)
     return render_template('H_ElAmantePerdido.html', promedio=promedio)  # Archivo H_ElAmantePerdido.html
 
+@app.route('/H_cafeteria')
+def H_cafeteria():
+    calificaciones = cargar_json()  # Función que lee el JSON
+    historia = '/H_cafeteria'
+    promedio = calcular_promedio(calificaciones, historia)
+    return render_template('H_cafeteria.html', promedio=promedio)  # Archivo H_cafeteria.html
+
 @app.route('/resenas')
 def resenas():
     return render_template('resenas.html')  # reseñas.html

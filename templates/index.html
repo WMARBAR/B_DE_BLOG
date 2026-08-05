@@ -7,13 +7,12 @@
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='guyfox.ico') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" media="screen and (min-width: 768px)">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles-media.css') }}" media="screen and (max-width: 767px)">
-    
 </head>
 <body>
     <!-- Banner con menú integrado -->
     <header class="banner">
         <div class="banner-content">
-            <h1 class="banner-title">B DE BLOG</h1>
+            <h1 class="banner-title">B de Blog</h1>
             <nav class="banner-menu">
                 <button class="menu-button" onclick="location.href='/'">Home</button>
                 <button class="menu-button" onclick="location.href='/historias'">Historias</button>
@@ -23,12 +22,25 @@
         <img src="{{ url_for('static', filename='guyfox.webp') }}" alt="Blog Logo" class="banner-image">
     </header>
 
-    <!-- Contenido principal (solo muestra la palabra MENÚ) -->
-    <div class="menu-container">
-        <h1 class="menu-title">¡Bienvenidos!</h1>
-        <p class="menu-description">
-            Soy un apasionado por la lectura y la escritura. Este blog es mi espacio de práctica, donde comparto algunas historias cortas y reseñas personales de los libros que he leído.
-        </p>
-    </div>
+    <!-- Hero editorial -->
+    <section class="hero">
+        <div class="hero-copy">
+            <span class="hero-kicker">Cuadernos de un lector obsesivo</span>
+            <h2 class="hero-title">Historias que<br>dejan <em>eco</em>.</h2>
+            <p class="hero-subtitle">
+                Soy un apasionado por la lectura y la escritura. Este es mi espacio de práctica: relatos cortos escritos desde cero y reseñas honestas de los libros que he leído. Sin algoritmos, sin relleno.
+            </p>
+            <div class="hero-divider"></div>
+            <div class="hero-actions">
+                <button class="hero-cta primary" onclick="location.href='/historias'">Leer historias</button>
+                <button class="hero-cta ghost" onclick="location.href='/resenas'">Ver reseñas</button>
+            </div>
+        </div>
+        <div class="hero-portrait">
+            <img src="{{ url_for('static', filename='guyfox.webp') }}" alt="">
+        </div>
+    </section>
+
+    <script src="{{ url_for('static', filename='interactions.js') }}" defer></script>
 </body>
 </html>

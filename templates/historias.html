@@ -12,7 +12,7 @@
     <!-- Banner con menú integrado -->
     <header class="banner">
         <div class="banner-content">
-            <h1 class="banner-title">B DE BLOG</h1>
+            <h1 class="banner-title">B de Blog</h1>
             <nav class="banner-menu">
                 <button class="menu-button" onclick="location.href='/'">Home</button>
                 <button class="menu-button" onclick="location.href='/historias'">Historias</button>
@@ -22,19 +22,81 @@
         <img src="{{ url_for('static', filename='guyfox.webp') }}" alt="Blog Logo" class="banner-image">
     </header>
 
-    <!-- Menú principal debajo del banner -->
-    <div class="menu">
-        <h1 class="menu-title">HISTORIAS</h1>
-        <button class="menu-button" onclick="location.href='/H_ElDiaQueElSol'">El día que el sol no salió</button>
-        <button class="menu-button" onclick="location.href='/H_eLEco'">El Eco</button>
-        <button class="menu-button" onclick="location.href='/H_cyberRevuelta'">La nueva mayoría</button>
-        <button class="menu-button" onclick="location.href='/H_ElAmantePerdido'">El amante perdido</button>
-        
+    <section class="page-header">
+        <div>
+            <span class="page-kicker">Ficción original</span>
+            <h1 class="page-title">Historias</h1>
+        </div>
+        <p class="page-subtitle">Relatos cortos escritos de principio a fin, sin filtro. Elige uno y califícalo al terminar.</p>
+    </section>
+
+    <div class="card-grid">
+        <a class="story-card featured" href="/H_ElDiaQueElSol">
+            <div class="story-card-media-wrap">
+                <img class="story-card-media" src="{{ url_for('static', filename='ElDiaSol1.webp') }}" alt="El día que el sol no salió">
+                <div class="story-card-overlay"></div>
+                <span class="story-card-index">01</span>
+            </div>
+            <div class="story-card-body">
+                <span class="story-card-author">Relato original</span>
+                <h2 class="story-card-title">El día que el sol no salió</h2>
+                <span class="story-card-arrow">Leer &rarr;</span>
+            </div>
+        </a>
+
+        <a class="story-card" href="/H_eLEco">
+            <div class="story-card-media-wrap">
+                <img class="story-card-media" src="{{ url_for('static', filename='eLEco.webp') }}" alt="El Eco">
+                <div class="story-card-overlay"></div>
+                <span class="story-card-index">02</span>
+            </div>
+            <div class="story-card-body">
+                <span class="story-card-author">Relato original</span>
+                <h2 class="story-card-title">El Eco</h2>
+                <span class="story-card-arrow">Leer &rarr;</span>
+            </div>
+        </a>
+
+        <a class="story-card" href="/H_cyberRevuelta">
+            <div class="story-card-media-wrap">
+                <img class="story-card-media" src="{{ url_for('static', filename='ciberRevuelta.webp') }}" alt="La nueva mayoría">
+                <div class="story-card-overlay"></div>
+                <span class="story-card-index">03</span>
+            </div>
+            <div class="story-card-body">
+                <span class="story-card-author">Relato original</span>
+                <h2 class="story-card-title">La nueva mayoría</h2>
+                <span class="story-card-arrow">Leer &rarr;</span>
+            </div>
+        </a>
+
+        <a class="story-card" href="/H_ElAmantePerdido">
+            <div class="story-card-media-wrap">
+                <img class="story-card-media" src="{{ url_for('static', filename='AmantePerdido.png') }}" alt="El amante perdido">
+                <div class="story-card-overlay"></div>
+                <span class="story-card-index">04</span>
+            </div>
+            <div class="story-card-body">
+                <span class="story-card-author">Relato original</span>
+                <h2 class="story-card-title">El amante perdido</h2>
+                <span class="story-card-arrow">Leer &rarr;</span>
+            </div>
+        </a>
+
+        <a class="story-card" href="/H_cafeteria">
+            <div class="story-card-media-wrap">
+                <img class="story-card-media" src="{{ url_for('static', filename='cafeteria.png') }}" alt="La Cafetería">
+                <div class="story-card-overlay"></div>
+                <span class="story-card-index">05</span>
+            </div>
+            <div class="story-card-body">
+                <span class="story-card-author">Relato original</span>
+                <h2 class="story-card-title">La Cafetería</h2>
+                <span class="story-card-arrow">Leer &rarr;</span>
+            </div>
+        </a>
     </div>
 
-    <div class="container">
-        <h2 class="story-title"></h2>
-        <p class="story-text"></p>
-    </div>
+    <script src="{{ url_for('static', filename='interactions.js') }}" defer></script>
 </body>
 </html>
