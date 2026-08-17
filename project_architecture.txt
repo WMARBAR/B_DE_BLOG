@@ -1,0 +1,29 @@
+B_DE_BLOG/
+│
+├── app.py                          # Flask app: all routes + rating logic (single-file backend)
+├── requirements.txt                # Flask, Jinja2, Werkzeug, MarkupSafe, itsdangerous, click, blinker, colorama
+├── README.md
+├── calificaciones.json             # Flat-file "database": {story_route: {ip: rating}}
+│
+├── templates/                      # Jinja2 templates — no inheritance (no base.html), one file per page
+│   ├── index.html                  # Home ("/") — hero section
+│   ├── historias.html              # Stories index ("/historias") — card grid
+│   ├── resenas.html                # Reviews index ("/resenas") — card grid
+│   │
+│   ├── H_ElDiaQueElSol.html        # Story page (dynamic: receives `promedio`, has rating widget)
+│   ├── H_eLEco.html                # Story page
+│   ├── H_cyberRevuelta.html        # Story page
+│   ├── H_ElAmantePerdido.html      # Story page
+│   ├── H_cafeteria.html            # Story page
+│   │
+│   └── rese_*.html                 # [25 static review pages, no rating widget — one per book/comic]
+│
+├── static/
+│   ├── styles.css                  # Desktop/tablet stylesheet (loaded via <link media="min-width:768px">)
+│   ├── styles-media.css            # Mobile stylesheet (loaded via <link media="max-width:767px">)
+│   ├── interactions.js             # Shared JS: nav active-state, scroll-reveal, banner shrink, footer injection
+│   ├── guyfox.ico                  # Favicon
+│   ├── guyfox.webp                 # Site logo / brand mask (used in banner, hero, footer)
+│   └── [cover art images — ~26 .png/.webp files, one per story/review]
+│
+└── venv/                           # Local virtualenv (git-ignored, not part of the app)
