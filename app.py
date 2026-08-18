@@ -1,53 +1,105 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, jsonify
 import os
-from flask import request, jsonify
-import json
+
+try:
+    from dotenv import load_dotenv
+    load_dotenv()  # loads .env for local development only; no-op in production
+except ImportError:
+    pass
+
+import database as db
+
 app = Flask(__name__)
 
-def cargar_json():
-    archivo = 'calificaciones.json'
-    if os.path.exists(archivo):
-        with open(archivo, 'r') as f:
-            return json.load(f)
-    return {}
-
-def calcular_promedio(calificaciones, historia):
-    votos_por_ip = calificaciones.get(historia, {})
-    votos = list(votos_por_ip.values())
-    if votos:
-        return round(sum(votos) / len(votos), 2)
-    return 0
+# Idempotent — safe to run on every cold start. If DATABASE_URL isn't set
+# (e.g. local dev without Postgres configured yet), the app still boots;
+# only the /api/* rating endpoints will fail until it's configured.
+try:
+    db.init_db()
+except db.DatabaseNotConfigured:
+    app.logger.warning("DATABASE_URL no configurada: el sistema de calificaciones está deshabilitado.")
+except Exception:
+    app.logger.exception("No se pudo inicializar la tabla de calificaciones.")
 
 
-@app.route('/guardar_calificacion', methods=['POST'])
-def guardar_calificacion():
-    data = request.get_json()
-    historia = data.get('historia')
-    calificacion = int(data.get('calificacion'))
-    ip = request.remote_addr
+def get_client_ip():
+    """The app runs behind Vercel's proxy, which sets X-Forwarded-For at the
+    edge (the client cannot spoof what Vercel appends). We take the first
+    address in that chain — the original visitor — falling back to
+    remote_addr for local development where no proxy is involved."""
+    forwarded = request.headers.get('X-Forwarded-For', '')
+    if forwarded:
+        return forwarded.split(',')[0].strip()
+    return request.remote_addr or '0.0.0.0'
 
-    archivo = 'calificaciones.json'
 
-    # Cargar calificaciones existentes o crear nuevo diccionario
-    if os.path.exists(archivo):
-        with open(archivo, 'r') as f:
-            calificaciones = json.load(f)
-    else:
-        calificaciones = {}
+@app.route('/api/calificar', methods=['POST'])
+def api_calificar():
+    data = request.get_json(silent=True) or {}
+    contenido = data.get('contenido')
+    tipo = data.get('tipo')
 
-    # Si no existe la historia, se crea
-    if historia not in calificaciones:
-        calificaciones[historia] = {}
+    if not contenido or contenido not in db.CONTENIDO_VALIDO:
+        return jsonify({"success": False, "error": "El contenido indicado no existe."}), 400
 
-    # Actualizar o insertar la calificación por IP
-    calificaciones[historia][ip] = calificacion
+    if tipo != db.CONTENIDO_VALIDO[contenido]:
+        return jsonify({"success": False, "error": "El tipo no coincide con el contenido."}), 400
 
-    # Guardar el archivo actualizado
-    with open(archivo, 'w') as f:
-        json.dump(calificaciones, f, indent=4)
+    try:
+        calificacion = int(data.get('calificacion'))
+    except (TypeError, ValueError):
+        return jsonify({"success": False, "error": "La calificación debe ser un número entero."}), 400
 
-    return jsonify({"message": f"¡Gracias! Has calificado con {calificacion} estrella(s)."})
+    if calificacion < 1 or calificacion > 5:
+        return jsonify({"success": False, "error": "La calificación debe estar entre 1 y 5."}), 400
 
+    ip_hash = db.hash_ip(get_client_ip())
+
+    try:
+        stats = db.upsert_calificacion(contenido, tipo, ip_hash, calificacion)
+    except db.DatabaseNotConfigured as e:
+        return jsonify({"success": False, "error": str(e)}), 500
+    except Exception:
+        app.logger.exception("Error guardando calificación para %s", contenido)
+        return jsonify({"success": False, "error": "No se pudo guardar la calificación. Intenta más tarde."}), 500
+
+    return jsonify({
+        "success": True,
+        "promedio": stats["promedio"],
+        "total_votos": stats["total_votos"],
+        "mi_calificacion": stats["mi_calificacion"],
+    })
+
+
+@app.route('/api/calificacion/<contenido>')
+def api_obtener_calificacion(contenido):
+    if contenido not in db.CONTENIDO_VALIDO:
+        return jsonify({"success": False, "error": "El contenido indicado no existe."}), 404
+
+    ip_hash = db.hash_ip(get_client_ip())
+
+    try:
+        stats = db.get_stats(contenido, ip_hash)
+    except db.DatabaseNotConfigured as e:
+        return jsonify({"success": False, "error": str(e)}), 500
+    except Exception:
+        app.logger.exception("Error consultando calificación para %s", contenido)
+        return jsonify({"success": False, "error": "No se pudo consultar la calificación."}), 500
+
+    return jsonify({"success": True, **stats})
+
+
+@app.route('/api/calificaciones')
+def api_obtener_calificaciones():
+    try:
+        stats = db.get_all_stats()
+    except db.DatabaseNotConfigured as e:
+        return jsonify({"success": False, "error": str(e)}), 500
+    except Exception:
+        app.logger.exception("Error consultando calificaciones")
+        return jsonify({"success": False, "error": "No se pudieron consultar las calificaciones."}), 500
+
+    return jsonify({"success": True, "calificaciones": stats})
 
 
 @app.route('/')
@@ -60,39 +112,24 @@ def historias():
 
 @app.route('/H_ElDiaQueElSol')
 def H_ElDiaQueElSol():
-    calificaciones = cargar_json()  # Función que lee el JSON
-    historia = '/H_ElDiaQueElSol'
-    promedio = calcular_promedio(calificaciones, historia)
-    return render_template('H_ElDiaQueElSol.html', promedio=promedio)
+    return render_template('H_ElDiaQueElSol.html')
 
 @app.route('/H_eLEco')
 def H_eLEco():
-    calificaciones = cargar_json()  # Función que lee el JSON
-    historia = '/H_eLEco'
-    promedio = calcular_promedio(calificaciones, historia)
-    return render_template('H_eLEco.html', promedio=promedio)
+    return render_template('H_eLEco.html')
 
 @app.route('/H_cyberRevuelta')
 def H_cyberRevuelta():
-    calificaciones = cargar_json()  # Función que lee el JSON
-    historia = '/H_cyberRevuelta'
-    promedio = calcular_promedio(calificaciones, historia)
-    return render_template('H_cyberRevuelta.html', promedio=promedio)  # Archivo H_cyberRevuelta.html
+    return render_template('H_cyberRevuelta.html')  # Archivo H_cyberRevuelta.html
 
 
 @app.route('/H_ElAmantePerdido')
 def H_ElAmantePerdido():
-    calificaciones = cargar_json()  # Función que lee el JSON
-    historia = '/H_ElAmantePerdido'
-    promedio = calcular_promedio(calificaciones, historia)
-    return render_template('H_ElAmantePerdido.html', promedio=promedio)  # Archivo H_ElAmantePerdido.html
+    return render_template('H_ElAmantePerdido.html')  # Archivo H_ElAmantePerdido.html
 
 @app.route('/H_cafeteria')
 def H_cafeteria():
-    calificaciones = cargar_json()  # Función que lee el JSON
-    historia = '/H_cafeteria'
-    promedio = calcular_promedio(calificaciones, historia)
-    return render_template('H_cafeteria.html', promedio=promedio)  # Archivo H_cafeteria.html
+    return render_template('H_cafeteria.html')  # Archivo H_cafeteria.html
 
 @app.route('/resenas')
 def resenas():

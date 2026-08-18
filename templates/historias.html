@@ -40,6 +40,7 @@
             <div class="story-card-body">
                 <span class="story-card-author">Relato original</span>
                 <h2 class="story-card-title">El día que el sol no salió</h2>
+                <span class="story-card-rating" data-contenido="H_ElDiaQueElSol"></span>
                 <span class="story-card-arrow">Leer &rarr;</span>
             </div>
         </a>
@@ -53,6 +54,7 @@
             <div class="story-card-body">
                 <span class="story-card-author">Relato original</span>
                 <h2 class="story-card-title">El Eco</h2>
+                <span class="story-card-rating" data-contenido="H_eLEco"></span>
                 <span class="story-card-arrow">Leer &rarr;</span>
             </div>
         </a>
@@ -66,6 +68,7 @@
             <div class="story-card-body">
                 <span class="story-card-author">Relato original</span>
                 <h2 class="story-card-title">La nueva mayoría</h2>
+                <span class="story-card-rating" data-contenido="H_cyberRevuelta"></span>
                 <span class="story-card-arrow">Leer &rarr;</span>
             </div>
         </a>
@@ -79,6 +82,7 @@
             <div class="story-card-body">
                 <span class="story-card-author">Relato original</span>
                 <h2 class="story-card-title">El amante perdido</h2>
+                <span class="story-card-rating" data-contenido="H_ElAmantePerdido"></span>
                 <span class="story-card-arrow">Leer &rarr;</span>
             </div>
         </a>
@@ -92,11 +96,13 @@
             <div class="story-card-body">
                 <span class="story-card-author">Relato original</span>
                 <h2 class="story-card-title">La Cafetería</h2>
+                <span class="story-card-rating" data-contenido="H_cafeteria"></span>
                 <span class="story-card-arrow">Leer &rarr;</span>
             </div>
         </a>
     </div>
 
+    <script src="{{ url_for('static', filename='ratings.js') }}" defer></script>
     <script src="{{ url_for('static', filename='interactions.js') }}" defer></script>
 </body>
 </html>

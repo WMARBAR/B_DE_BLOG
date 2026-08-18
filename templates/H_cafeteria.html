@@ -882,7 +882,7 @@
             <img src="{{ url_for('static', filename='cafeteria.png') }}" alt="La Cafetería" class="story-image">
         </div>
 
-            <div class="rating-container">
+            <div class="rating-container" data-contenido="H_cafeteria" data-tipo="historia">
             <h3>¿Qué te pareció esta historia?</h3>
             <div class="stars-average">
                 <div class="star" data-index="0"></div>
@@ -891,68 +891,12 @@
                 <div class="star" data-index="3"></div>
                 <div class="star" data-index="4"></div>
             </div>
+            <p class="rating-count"></p>
             <p id="rating-msg"></p>
         </div>
-        <div id="rating-script-data" data-promedio="{{ promedio }}"></div>
     </div>
 
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const promedio = parseFloat(document.getElementById("rating-script-data").dataset.promedio || "0");
-        const estrellas = document.querySelectorAll('.stars-average .star');
-        const historia = "/H_cafeteria";  // Debe coincidir con el usado en el JSON
-        const ratingMsg = document.getElementById("rating-msg");
-
-        // Mostrar promedio inicial
-        estrellas.forEach((estrella, i) => {
-            const fill = Math.min(Math.max(promedio - i, 0), 1) * 100;
-            estrella.style.setProperty('--fill', `${fill}%`);
-        });
-
-        // Evento de clic para calificar
-        estrellas.forEach((estrella, index) => {
-            estrella.addEventListener('click', () => {
-                const nuevaCalificacion = index + 1;
-
-                fetch("/guardar_calificacion", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({
-                        historia: historia,
-                        calificacion: nuevaCalificacion
-                    })
-                })
-                .then(response => response.json())
-                .then(data => {
-                    ratingMsg.textContent = data.message;
-
-                    // Actualiza estrellas con nuevo promedio
-                    fetch(location.href)
-                        .then(res => res.text())
-                        .then(html => {
-                            const temp = document.createElement("div");
-                            temp.innerHTML = html;
-                            const nuevoPromedio = parseFloat(temp.querySelector("#rating-script-data").dataset.promedio);
-                            actualizarEstrellas(nuevoPromedio);
-                        });
-                })
-                .catch(err => {
-                    console.error(err);
-                    ratingMsg.textContent = "Ocurrió un error. Intenta más tarde.";
-                });
-            });
-        });
-
-        function actualizarEstrellas(promedioNuevo) {
-            estrellas.forEach((estrella, i) => {
-                const fill = Math.min(Math.max(promedioNuevo - i, 0), 1) * 100;
-                estrella.style.setProperty('--fill', `${fill}%`);
-            });
-        }
-    });
-    </script>
+    <script src="{{ url_for('static', filename='ratings.js') }}" defer></script>
     <script src="{{ url_for('static', filename='interactions.js') }}" defer></script>
 </body>
 </html>

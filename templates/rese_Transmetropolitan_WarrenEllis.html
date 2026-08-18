@@ -47,7 +47,22 @@
         <div class="image-container">
             <img src="{{ url_for('static', filename='transmetropolitan.png') }}" alt="transmetropolitan" class="story-image">
         </div>
+
+            <div class="rating-container" data-contenido="rese_Transmetropolitan_WarrenEllis" data-tipo="resena">
+            <h3>¿Qué te pareció esta reseña?</h3>
+            <div class="stars-average">
+                <div class="star" data-index="0"></div>
+                <div class="star" data-index="1"></div>
+                <div class="star" data-index="2"></div>
+                <div class="star" data-index="3"></div>
+                <div class="star" data-index="4"></div>
+            </div>
+            <p class="rating-count"></p>
+            <p id="rating-msg"></p>
+        </div>
     </div>
+
+    <script src="{{ url_for('static', filename='ratings.js') }}" defer></script>
     <script src="{{ url_for('static', filename='interactions.js') }}" defer></script>
 </body>
 </html>

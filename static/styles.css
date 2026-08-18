@@ -439,6 +439,16 @@ img { display: block; max-width: 100%; }
     transition: color .3s var(--ease);
 }
 
+.story-card-rating {
+    display: block;
+    margin-top: 0.5rem;
+    font-family: var(--f-ui);
+    font-size: var(--fs-2xs);
+    letter-spacing: 0.04em;
+    color: var(--gold-soft);
+    opacity: 0.85;
+}
+
 .story-card-arrow {
     display: inline-block;
     margin-top: 0.75rem;
@@ -626,6 +636,14 @@ img { display: block; max-width: 100%; }
     -webkit-mask-image: linear-gradient(90deg, #000 0, #000 var(--fill, 0%), transparent var(--fill, 0%));
     mask-image: linear-gradient(90deg, #000 0, #000 var(--fill, 0%), transparent var(--fill, 0%));
     transition: mask-image .6s var(--ease), -webkit-mask-image .6s var(--ease);
+}
+
+.rating-count {
+    margin: 0.75rem 0 0;
+    font-family: var(--f-ui);
+    font-size: var(--fs-2xs);
+    letter-spacing: 0.06em;
+    color: var(--paper-faint);
 }
 
 #rating-msg {
