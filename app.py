@@ -102,6 +102,62 @@ def api_obtener_calificaciones():
     return jsonify({"success": True, "calificaciones": stats})
 
 
+def _serializar_comentario(row):
+    """Copy the row with `fecha` as an explicit ISO string, so the JSON
+    shape doesn't depend on Flask's default datetime encoding."""
+    out = dict(row)
+    if out.get("fecha") is not None:
+        out["fecha"] = out["fecha"].isoformat()
+    return out
+
+
+@app.route('/api/comentarios', methods=['POST'])
+def api_crear_comentario():
+    data = request.get_json(silent=True) or {}
+    historia = data.get('historia')
+    apodo = (data.get('apodo') or '').strip()
+    comentario = (data.get('comentario') or '').strip()
+
+    if not historia or historia not in db.HISTORIAS_VALIDAS:
+        return jsonify({"success": False, "error": "La historia indicada no existe."}), 400
+
+    if not apodo:
+        return jsonify({"success": False, "error": "El apodo no puede estar vacío."}), 400
+    if len(apodo) > 50:
+        return jsonify({"success": False, "error": "El apodo no puede superar 50 caracteres."}), 400
+
+    if not comentario:
+        return jsonify({"success": False, "error": "El comentario no puede estar vacío."}), 400
+    if len(comentario) > 1000:
+        return jsonify({"success": False, "error": "El comentario no puede superar 1000 caracteres."}), 400
+
+    try:
+        nuevo = db.crear_comentario(historia, apodo, comentario)
+    except db.DatabaseNotConfigured as e:
+        return jsonify({"success": False, "error": str(e)}), 500
+    except Exception:
+        app.logger.exception("Error guardando comentario para %s", historia)
+        return jsonify({"success": False, "error": "No se pudo publicar el comentario. Intenta más tarde."}), 500
+
+    return jsonify({"success": True, "comentario": _serializar_comentario(nuevo)}), 201
+
+
+@app.route('/api/comentarios/<historia>')
+def api_obtener_comentarios(historia):
+    if historia not in db.HISTORIAS_VALIDAS:
+        return jsonify({"success": False, "error": "La historia indicada no existe."}), 404
+
+    try:
+        comentarios = db.obtener_comentarios(historia)
+    except db.DatabaseNotConfigured as e:
+        return jsonify({"success": False, "error": str(e)}), 500
+    except Exception:
+        app.logger.exception("Error consultando comentarios para %s", historia)
+        return jsonify({"success": False, "error": "No se pudieron consultar los comentarios."}), 500
+
+    return jsonify({"success": True, "comentarios": [_serializar_comentario(c) for c in comentarios]})
+
+
 @app.route('/')
 def home():
     return render_template('index.html')

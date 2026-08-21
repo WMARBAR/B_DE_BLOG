@@ -520,9 +520,31 @@
             <p class="rating-count"></p>
             <p id="rating-msg"></p>
         </div>
+
+        <section class="comments-section" data-historia="H_EscuadronImposible.html">
+            <h3>Comentarios</h3>
+
+            <form class="comment-form">
+                <div class="comment-field">
+                    <label for="comment-apodo">Apodo</label>
+                    <input type="text" id="comment-apodo" class="comment-apodo-field" maxlength="50" placeholder="Tu apodo" required>
+                </div>
+                <div class="comment-field">
+                    <label for="comment-texto">Comentario</label>
+                    <textarea id="comment-texto" class="comment-texto-field" maxlength="1000" rows="4" placeholder="¿Qué te pareció esta historia?" required></textarea>
+                    <span class="comment-counter">0 / 1000</span>
+                </div>
+                <button type="submit" class="comment-submit">Publicar comentario</button>
+                <p class="comment-feedback"></p>
+            </form>
+
+            <div class="comments-list"></div>
+            <p class="comments-empty" hidden>Sé el primero en comentar.</p>
+        </section>
     </div>
 
     <script src="{{ url_for('static', filename='ratings.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='comentarios.js') }}" defer></script>
     <script src="{{ url_for('static', filename='interactions.js') }}" defer></script>
 </body>
 </html>

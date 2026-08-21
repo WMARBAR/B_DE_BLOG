@@ -60,6 +60,16 @@ CONTENIDO_VALIDO = {
 }
 
 
+# Comments are only enabled for stories (not reviews), keyed by their
+# template filename (e.g. "H_cafeteria.html"). Derived from the same
+# CONTENIDO_VALIDO registry above so there's a single source of truth for
+# "which stories exist" — adding a story to CONTENIDO_VALIDO is enough to
+# make it commentable too.
+HISTORIAS_VALIDAS = {
+    f"{contenido}.html" for contenido, tipo in CONTENIDO_VALIDO.items() if tipo == "historia"
+}
+
+
 class DatabaseNotConfigured(RuntimeError):
     """Raised when DATABASE_URL is missing — lets callers return a clean 500
     instead of the app crashing at import time."""
@@ -93,7 +103,9 @@ def get_cursor(commit=False):
 
 
 def init_db():
-    """Idempotent — safe to call on every cold start."""
+    """Idempotent — safe to call on every cold start. Every statement here
+    is CREATE TABLE/INDEX IF NOT EXISTS: it never drops or resets anything,
+    so existing production data (ratings, comments) is always preserved."""
     with get_cursor(commit=True) as cur:
         cur.execute(
             """
@@ -113,6 +125,21 @@ def init_db():
         cur.execute(
             "CREATE INDEX IF NOT EXISTS idx_calificaciones_contenido "
             "ON calificaciones (contenido);"
+        )
+        cur.execute(
+            """
+            CREATE TABLE IF NOT EXISTS comentarios (
+                id SERIAL PRIMARY KEY,
+                historia VARCHAR(255) NOT NULL,
+                apodo VARCHAR(50) NOT NULL,
+                comentario VARCHAR(1000) NOT NULL,
+                fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            );
+            """
+        )
+        cur.execute(
+            "CREATE INDEX IF NOT EXISTS idx_comentarios_historia "
+            "ON comentarios (historia);"
         )
 
 
@@ -198,3 +225,38 @@ def get_all_stats() -> dict:
         }
         for row in rows
     }
+
+
+def crear_comentario(historia: str, apodo: str, comentario: str) -> dict:
+    """Insert one comment and return the stored row (id + server-assigned
+    fecha) in the same round trip, so the frontend can render it immediately
+    without a follow-up GET."""
+    with get_cursor(commit=True) as cur:
+        cur.execute(
+            """
+            INSERT INTO comentarios (historia, apodo, comentario)
+            VALUES (%s, %s, %s)
+            RETURNING id, historia, apodo, comentario, fecha;
+            """,
+            (historia, apodo, comentario),
+        )
+        row = cur.fetchone()
+
+    return dict(row)
+
+
+def obtener_comentarios(historia: str) -> list:
+    """All comments for one story, newest first."""
+    with get_cursor() as cur:
+        cur.execute(
+            """
+            SELECT id, historia, apodo, comentario, fecha
+            FROM comentarios
+            WHERE historia = %s
+            ORDER BY fecha DESC;
+            """,
+            (historia,),
+        )
+        rows = cur.fetchall()
+
+    return [dict(row) for row in rows]

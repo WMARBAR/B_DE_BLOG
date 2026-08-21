@@ -655,6 +655,163 @@ img { display: block; max-width: 100%; }
 }
 
 /* ---------------------------------------------------------------------- */
+/* Comments                                                                */
+/* ---------------------------------------------------------------------- */
+
+.comments-section {
+    width: 100%;
+    margin: 3.75rem auto 0;
+    text-align: left;
+}
+
+.comments-section h3 {
+    font-family: var(--f-ui);
+    font-weight: 500;
+    font-size: var(--fs-xs);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--paper-dim);
+    margin-bottom: 1.25rem;
+}
+
+.comment-form {
+    padding: 1.75rem;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+}
+
+.comment-field {
+    margin-bottom: 1.125rem;
+}
+
+.comment-field label {
+    display: block;
+    font-family: var(--f-ui);
+    font-size: var(--fs-2xs);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--paper-faint);
+    margin-bottom: 0.5rem;
+}
+
+.comment-apodo-field,
+.comment-texto-field {
+    width: 100%;
+    background: var(--void);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius);
+    color: var(--paper);
+    font-family: var(--f-body);
+    font-size: var(--fs-sm);
+    padding: 0.75rem 0.875rem;
+    transition: border-color .3s var(--ease);
+}
+
+.comment-texto-field {
+    resize: vertical;
+    min-height: 6rem;
+    line-height: 1.6;
+    font-family: inherit;
+}
+
+.comment-apodo-field:focus,
+.comment-texto-field:focus {
+    outline: none;
+    border-color: var(--gold-soft);
+}
+
+.comment-counter {
+    display: block;
+    margin-top: 0.5rem;
+    text-align: right;
+    font-family: var(--f-ui);
+    font-size: var(--fs-2xs);
+    color: var(--paper-faint);
+}
+
+.comment-counter.over-limit { color: var(--red-soft); }
+
+.comment-submit {
+    font-family: var(--f-ui);
+    font-weight: 500;
+    font-size: var(--fs-xs);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 0.85rem 1.75rem;
+    background: var(--paper);
+    color: var(--void);
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background .3s var(--ease);
+}
+
+.comment-submit:hover { background: var(--gold-soft); }
+
+.comment-feedback {
+    margin: 1rem 0 0;
+    min-height: 1.4em;
+    font-family: var(--f-ui);
+    font-size: var(--fs-xs);
+    color: var(--gold-soft);
+}
+
+.comment-feedback.is-error { color: var(--red-soft); }
+
+.comments-list {
+    margin-top: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.comments-empty {
+    margin-top: 1.75rem;
+    font-family: var(--f-ui);
+    font-size: var(--fs-xs);
+    color: var(--paper-faint);
+}
+
+.comment-item {
+    padding: 1.25rem 1.5rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+}
+
+.comment-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.comment-author {
+    font-family: var(--f-ui);
+    font-weight: 500;
+    font-size: var(--fs-xs);
+    letter-spacing: 0.04em;
+    color: var(--gold-soft);
+}
+
+.comment-fecha {
+    font-family: var(--f-ui);
+    font-size: var(--fs-2xs);
+    color: var(--paper-faint);
+    white-space: nowrap;
+}
+
+.comment-body {
+    margin: 0;
+    font-family: var(--f-body);
+    font-size: var(--fs-sm);
+    line-height: 1.7;
+    color: var(--paper-dim);
+    overflow-wrap: break-word;
+}
+
+/* ---------------------------------------------------------------------- */
 /* Scroll-reveal utility (driven by static/interactions.js)               */
 /* transition lives on the REVEALED state only — the hidden state must    */
 /* apply instantly or the reveal itself becomes a visible fade-to-black.  */
