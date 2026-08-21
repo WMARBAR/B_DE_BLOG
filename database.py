@@ -29,6 +29,7 @@ CONTENIDO_VALIDO = {
     "H_cyberRevuelta": "historia",
     "H_ElAmantePerdido": "historia",
     "H_cafeteria": "historia",
+    "H_EscuadronImposible": "historia",
 
     # Reseñas
     "rese_tfundacion_asimov": "resena",

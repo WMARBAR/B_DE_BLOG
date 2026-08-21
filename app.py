@@ -131,6 +131,10 @@ def H_ElAmantePerdido():
 def H_cafeteria():
     return render_template('H_cafeteria.html')  # Archivo H_cafeteria.html
 
+@app.route('/H_EscuadronImposible')
+def H_EscuadronImposible():
+    return render_template('H_EscuadronImposible.html')  # Archivo H_EscuadronImposible.html
+
 @app.route('/resenas')
 def resenas():
     return render_template('resenas.html')  # reseñas.html
