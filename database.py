@@ -30,6 +30,7 @@ CONTENIDO_VALIDO = {
     "H_ElAmantePerdido": "historia",
     "H_cafeteria": "historia",
     "H_EscuadronImposible": "historia",
+    "H_EscuadronImposibleII": "historia",
 
     # Reseñas
     "rese_tfundacion_asimov": "resena",

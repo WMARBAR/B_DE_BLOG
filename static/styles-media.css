@@ -675,6 +675,87 @@ img { display: block; max-width: 100%; }
 }
 
 /* ---------------------------------------------------------------------- */
+/* Classified dossier insert — scoped entirely to .expediente*            */
+/* ---------------------------------------------------------------------- */
+
+.expediente {
+    width: 100%;
+    max-width: 100%;
+    margin: 2rem auto;
+    padding: 1.25rem 1.25rem 1.5rem;
+    background: #e7e0cb;
+    color: #2b2620;
+    border: 1px solid #b9ae8f;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.expediente-header {
+    text-align: center;
+    margin-bottom: 0.875rem;
+}
+
+.expediente-header p {
+    margin: 0 0 0.375rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+}
+
+.expediente-reservado {
+    display: inline-block;
+    margin-top: 0.5rem !important;
+    padding: 0.2rem 0.6rem;
+    border: 2px solid #7a1f22;
+    color: #7a1f22;
+    letter-spacing: 0.08em;
+    transform: rotate(-2deg);
+    font-size: 0.6875rem !important;
+}
+
+.expediente hr {
+    border: none;
+    border-top: 1px dashed #a89c7a;
+    margin: 0.875rem 0 1rem;
+}
+
+.expediente p {
+    margin: 0 0 0.4rem;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+    text-align: left;
+}
+
+.expediente p:last-child { margin-bottom: 0; }
+
+.expediente strong {
+    font-weight: 700;
+    color: #1b1712;
+}
+
+/* Same fix as styles.css: the story's drop-cap rule matches any <p> that
+   is first-of-type within its own parent, which reaches into the
+   dossier's nested paragraphs. Reset it there only. */
+.expediente p::first-letter,
+.expediente-header p::first-letter {
+    font-size: inherit !important;
+    font-family: inherit !important;
+    font-weight: inherit !important;
+    color: inherit !important;
+    float: none !important;
+    line-height: inherit !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* ---------------------------------------------------------------------- */
 /* Scroll-reveal — transition only on the revealed state, never on hidden */
 /* ---------------------------------------------------------------------- */
 

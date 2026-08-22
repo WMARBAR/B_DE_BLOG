@@ -191,6 +191,10 @@ def H_cafeteria():
 def H_EscuadronImposible():
     return render_template('H_EscuadronImposible.html')  # Archivo H_EscuadronImposible.html
 
+@app.route('/H_EscuadronImposibleII')
+def H_EscuadronImposibleII():
+    return render_template('H_EscuadronImposibleII.html')  # Archivo H_EscuadronImposibleII.html
+
 @app.route('/resenas')
 def resenas():
     return render_template('resenas.html')  # reseñas.html
