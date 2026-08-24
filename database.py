@@ -32,6 +32,7 @@ CONTENIDO_VALIDO = {
     "H_EscuadronImposible": "historia",
     "H_EscuadronImposibleII": "historia",
     "H_EscuadronImposibleIII": "historia",
+    "H_EscuadronImposible_IV": "historia",
 
     # Reseñas
     "rese_tfundacion_asimov": "resena",
