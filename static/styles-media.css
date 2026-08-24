@@ -289,6 +289,40 @@ img { display: block; max-width: 100%; }
 }
 
 /* ---------------------------------------------------------------------- */
+/* Category tabs                                                          */
+/* ---------------------------------------------------------------------- */
+
+.category-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.25rem 1.75rem;
+    width: 100%;
+    margin: 1.5rem 0 0;
+    padding: 0 var(--sp-gutter);
+}
+
+.category-tab {
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 0.25rem 0 0.6rem;
+    min-height: 2.25rem;
+    font-family: var(--f-ui);
+    font-weight: 500;
+    font-size: var(--fs-xs);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--paper-faint);
+    cursor: pointer;
+}
+
+.category-tab.is-active {
+    color: var(--paper);
+    border-bottom-color: var(--gold-soft);
+}
+
+/* ---------------------------------------------------------------------- */
 /* Card grid                                                              */
 /* ---------------------------------------------------------------------- */
 
@@ -301,11 +335,28 @@ img { display: block; max-width: 100%; }
     gap: clamp(1.75rem, 1.4rem + 1.5vw, 2.25rem);
 }
 
+/* !important is deliberate — see styles.css for why (competes with the
+   scroll-reveal .reveal/.in-view classes on the same elements). */
+.story-card.is-category-hidden {
+    opacity: 0 !important;
+    transform: translateY(8px) !important;
+    transition-duration: .2s !important;
+    transition-timing-function: var(--ease) !important;
+    pointer-events: none;
+}
+
+/* !important for consistency with styles.css — guarantees a hidden card
+   never stays visible regardless of any other display rule (e.g. .featured). */
+.story-card.is-category-removed {
+    display: none !important;
+}
+
 .story-card {
     position: relative;
     display: block;
     overflow: hidden;
     background: var(--panel);
+    transition: opacity .2s var(--ease), transform .2s var(--ease);
 }
 
 .story-card-media-wrap {

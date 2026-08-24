@@ -360,6 +360,42 @@ img { display: block; max-width: 100%; }
 }
 
 /* ---------------------------------------------------------------------- */
+/* Category tabs (e.g. Historias sueltas / Escuadrón Imposible)           */
+/* ---------------------------------------------------------------------- */
+
+.category-tabs {
+    display: flex;
+    justify-content: center;
+    gap: clamp(1.75rem, 1.4rem + 1.5vw, 3rem);
+    width: 100%;
+    max-width: 1280px;
+    margin: clamp(2rem, 1.5rem + 2vw, 3rem) 0 0;
+    padding: 0 var(--sp-gutter);
+}
+
+.category-tab {
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 0 0 0.75rem;
+    font-family: var(--f-ui);
+    font-weight: 500;
+    font-size: var(--fs-xs);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--paper-faint);
+    cursor: pointer;
+    transition: color .3s var(--ease), border-color .3s var(--ease);
+}
+
+.category-tab:hover { color: var(--paper-dim); }
+
+.category-tab.is-active {
+    color: var(--paper);
+    border-bottom-color: var(--gold-soft);
+}
+
+/* ---------------------------------------------------------------------- */
 /* Editorial card grid — one featured cover, rest as an index             */
 /* ---------------------------------------------------------------------- */
 
@@ -381,6 +417,27 @@ img { display: block; max-width: 100%; }
     border-top: 1px solid var(--line);
     padding-top: 1.5rem;
     cursor: pointer;
+    transition: opacity .22s var(--ease), transform .22s var(--ease);
+}
+
+/* !important here is deliberate: .story-card also carries the scroll-reveal
+   .reveal/.in-view classes (see interactions.js), which declare their own
+   opacity/transform/transition on the same properties. The category filter
+   must always win regardless of reveal state or class order. */
+.story-card.is-category-hidden {
+    opacity: 0 !important;
+    transform: translateY(10px) !important;
+    transition-duration: .22s !important;
+    transition-timing-function: var(--ease) !important;
+    pointer-events: none;
+}
+
+/* !important is deliberate: .featured sets its own `display: grid` at the
+   same specificity (two classes) and is declared later in this file, so
+   without it a hidden-but-featured card would win the cascade tie and stay
+   visible regardless of category — confirmed live before adding this. */
+.story-card.is-category-removed {
+    display: none !important;
 }
 
 .story-card-media-wrap {
