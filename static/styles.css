@@ -584,6 +584,47 @@ img { display: block; max-width: 100%; }
 .image-container:hover .story-image { filter: none; }
 
 /* ---------------------------------------------------------------------- */
+/* Series navigation (prev/next between parts of a multi-part story)      */
+/* ---------------------------------------------------------------------- */
+
+.series-nav {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    margin: 2.5rem auto 0;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+}
+
+.series-nav-link {
+    font-family: var(--f-ui);
+    font-weight: 500;
+    font-size: var(--fs-xs);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--paper-dim);
+    border-bottom: 1px solid var(--line-strong);
+    padding-bottom: 0.2rem;
+    transition: color .3s var(--ease), border-color .3s var(--ease);
+}
+
+.series-nav-link:hover { color: var(--gold-soft); border-color: var(--gold-soft); }
+
+.series-nav-prev { justify-self: start; }
+.series-nav-next { justify-self: end; }
+
+.series-nav-label {
+    justify-self: center;
+    font-family: var(--f-display);
+    font-style: italic;
+    font-size: var(--fs-sm);
+    color: var(--paper-faint);
+    white-space: nowrap;
+}
+
+/* ---------------------------------------------------------------------- */
 /* Rating widget                                                          */
 /* ---------------------------------------------------------------------- */
 
