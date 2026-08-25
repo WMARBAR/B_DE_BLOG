@@ -203,6 +203,10 @@ def H_EscuadronImposibleIII():
 def H_EscuadronImposible_IV():
     return render_template('H_EscuadronImposible_IV.html')  # Archivo H_EscuadronImposible_IV.html
 
+@app.route('/H_EscuadronImposible_V')
+def H_EscuadronImposible_V():
+    return render_template('H_EscuadronImposible_V.html')  # Archivo H_EscuadronImposible_V.html
+
 @app.route('/resenas')
 def resenas():
     return render_template('resenas.html')  # reseñas.html
