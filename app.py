@@ -211,6 +211,30 @@ def H_EscuadronImposible_V():
 def H_EscuadronImposible_VI():
     return render_template('H_EscuadronImposible_VI.html')  # Archivo H_EscuadronImposible_VI.html
 
+@app.route('/H_EscuadronImposible_VII')
+def H_EscuadronImposible_VII():
+    return render_template('H_EscuadronImposible_VII.html')  # Archivo H_EscuadronImposible_VII.html
+
+@app.route('/H_EscuadronImposible_VIII')
+def H_EscuadronImposible_VIII():
+    return render_template('H_EscuadronImposible_VIII.html')  # Archivo H_EscuadronImposible_VIII.html
+
+@app.route('/H_EscuadronImposible_IX')
+def H_EscuadronImposible_IX():
+    return render_template('H_EscuadronImposible_IX.html')  # Archivo H_EscuadronImposible_IX.html
+
+@app.route('/H_EscuadronImposible_X')
+def H_EscuadronImposible_X():
+    return render_template('H_EscuadronImposible_X.html')  # Archivo H_EscuadronImposible_X.html
+
+@app.route('/H_EscuadronImposible_XI')
+def H_EscuadronImposible_XI():
+    return render_template('H_EscuadronImposible_XI.html')  # Archivo H_EscuadronImposible_XI.html
+
+@app.route('/H_EscuadronImposible_Epilogo')
+def H_EscuadronImposible_Epilogo():
+    return render_template('H_EscuadronImposible_Epilogo.html')  # Archivo H_EscuadronImposible_Epilogo.html
+
 @app.route('/resenas')
 def resenas():
     return render_template('resenas.html')  # reseñas.html
