@@ -32,6 +32,7 @@
 
     <div class="category-tabs" role="tablist">
         <button type="button" class="category-tab is-active" data-category="escuadron" role="tab" aria-selected="true">Escuadrón Imposible</button>
+        <button type="button" class="category-tab" data-category="scammers" role="tab" aria-selected="false">Scammers</button>
         <button type="button" class="category-tab" data-category="standalone" role="tab" aria-selected="false">Historias sueltas</button>
     </div>
 
@@ -287,6 +288,48 @@
              then register the new part's identifier in database.py
              (CONTENIDO_VALIDO) and its route in app.py, same pattern
              as H_EscuadronImposible / II / III.
+             ===================================================== -->
+
+        <!-- =====================================================
+             SCAMMERS
+             Cards start here — data-story-category="scammers"
+             ===================================================== -->
+        <a class="story-card" href="/H_Scammers_I" data-story-category="scammers">
+            <div class="story-card-media-wrap">
+                <img class="story-card-media" src="{{ url_for('static', filename='Scammers_I_i.png') }}" alt="Scammers — Parte I">
+                <div class="story-card-overlay"></div>
+                <span class="story-card-index">18</span>
+            </div>
+            <div class="story-card-body">
+                <span class="story-card-author">Relato original</span>
+                <h2 class="story-card-title">Scammers — Parte I</h2>
+                <span class="story-card-rating" data-contenido="H_Scammers_I"></span>
+                <span class="story-card-arrow">Leer &rarr;</span>
+            </div>
+        </a>
+
+        <a class="story-card" href="/H_Scammers_II" data-story-category="scammers">
+            <div class="story-card-media-wrap">
+                <img class="story-card-media" src="{{ url_for('static', filename='Scammers_II_i.png') }}" alt="Scammers — Parte II">
+                <div class="story-card-overlay"></div>
+                <span class="story-card-index">19</span>
+            </div>
+            <div class="story-card-body">
+                <span class="story-card-author">Relato original</span>
+                <h2 class="story-card-title">Scammers — Parte II</h2>
+                <span class="story-card-rating" data-contenido="H_Scammers_II"></span>
+                <span class="story-card-arrow">Leer &rarr;</span>
+            </div>
+        </a>
+
+        <!-- =====================================================
+             SCAMMERS
+             Add future parts here in the same order.
+             Copy the card block above, update: href, image filename,
+             story-card-index, story-card-title, and data-contenido —
+             then register the new part's identifier in database.py
+             (CONTENIDO_VALIDO) and its route in app.py, same pattern
+             as H_Scammers_I / H_Scammers_II.
              ===================================================== -->
     </div>
 

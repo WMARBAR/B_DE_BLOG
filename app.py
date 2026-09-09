@@ -235,6 +235,14 @@ def H_EscuadronImposible_XI():
 def H_EscuadronImposible_Epilogo():
     return render_template('H_EscuadronImposible_Epilogo.html')  # Archivo H_EscuadronImposible_Epilogo.html
 
+@app.route('/H_Scammers_I')
+def H_Scammers_I():
+    return render_template('H_Scammers_I.html')  # Archivo H_Scammers_I.html
+
+@app.route('/H_Scammers_II')
+def H_Scammers_II():
+    return render_template('H_Scammers_II.html')  # Archivo H_Scammers_II.html
+
 @app.route('/resenas')
 def resenas():
     return render_template('resenas.html')  # reseñas.html

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scammers II | B de Blog</title>
+    <meta name="description" content="Scammers — Parte II.">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='guyfox.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" media="screen and (min-width: 768px)">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles-media.css') }}" media="screen and (max-width: 767px)">
+</head>
+<body>
+    <!-- Banner con menú integrado -->
+    <header class="banner">
+        <div class="banner-content">
+            <h1 class="banner-title">B DE BLOG</h1>
+            <nav class="banner-menu">
+                <button class="menu-button" onclick="location.href='/'">Home</button>
+                <button class="menu-button" onclick="location.href='/historias'">Historias</button>
+                <button class="menu-button" onclick="location.href='/resenas'">Reseñas</button>
+            </nav>
+        </div>
+        <img src="{{ url_for('static', filename='guyfox.webp') }}" alt="Blog Logo" class="banner-image">
+    </header>
+
+    <div class="container">
+        <h2 class="story-title">Scammers - Parte II</h2>
+        <div class="story-text">
+
+        <p>En el Senado hervía la división.</p>
+
+        <p>El Gobierno había encontrado varias trabas para sacar adelante los ajustes de la reforma tributaria, pero ninguna tan grande como la propuesta de gravar a las iglesias.</p>
+
+        <p>La oposición convirtió el asunto en una batalla política.</p>
+
+        <p>Entre las filas de la bancada del Gobierno se encontraba una senadora que había llegado a ocupar su curul más por sus contactos que por su experiencia. La doctora María del Pilar Sanabria.</p>
+
+        <p>No era una gran oradora ni una experta legislativa, pero conocía a la gente adecuada.</p>
+
+        <p>Y sabía cuándo llamarla.</p>
+
+        <p>Esa misma tarde se reunió discretamente con uno de sus contactos dentro de la Policía.</p>
+
+        <p>—Logré conseguirle una cita —le dijo el policía.</p>
+
+        <p>—Perfecto. ¿Le mencionó el precio?</p>
+
+        <p>El policía asintió.</p>
+
+        <p>Sanabria lo miró con curiosidad.</p>
+
+        <p>—¿Y quién es?</p>
+
+        <p>—X.</p>
+
+        <p>—¿X?</p>
+
+        <p>—Así lo va a conocer.</p>
+
+        <p>—¿Y no debería saber algo más?</p>
+
+        <p>El policía negó con la cabeza.</p>
+
+        <p>—No le conviene. Con tipos como X, doctora, mientras menos sepa, mejor.</p>
+
+        <p>—¿Cuándo lo veo?</p>
+
+        <p>—Esta noche.</p>
+
+        <p>El policía le entregó un papel doblado.</p>
+
+        <p>Sanabria lo abrió.</p>
+
+        <p>Solo había una dirección y una hora.</p>
+
+
+        <div class="image-container">
+        <img 
+            src="{{ url_for('static', filename='Scammers_II_i.png') }}"
+            alt="Maqroll, Aureliano Buendía y Rosario atravesando la selva"
+            class="story-image"
+        >
+        </div>     
+
+
+
+        <p>No le resultó difícil a Luisa captar la atención del senador.</p>
+
+        <p>Mientras Sofía hablaba de asuntos legales, ella se dedicó a estudiarlo.</p>
+
+        <p>Descubrió que era diestro. Que tenía la costumbre de acomodarse el reloj cada vez que estaba pensando.</p>
+
+        <p>Pero, sobre todo, descubrió que le gustaban sus piernas.</p>
+
+        <p>Y sus caderas.</p>
+
+        <p>El senador procuraba ser discreto. Nunca bajaba la mirada cuando Luisa podía sorprenderlo haciéndolo, pero Luisa no necesitaba mirarlo directamente.</p>
+
+        <p>Había aprendido hacía mucho tiempo a utilizar los reflejos de las ventanas, los vidrios de los cuadros y las superficies brillantes para observar a un hombre sin que este supiera que estaba siendo observado y, en uno de aquellos reflejos, volvió a encontrar los ojos del senador recorriéndola.</p>
+
+        <p class="story-author">Ing. Wilson Felipe Martínez Barrantes.</p>
+
+        </div>
+
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='Scammers_II_ii.png') }}" alt="Scammers — Parte II" class="story-image">
+        </div>
+
+        <nav class="series-nav">
+            <a class="series-nav-link series-nav-prev" href="/H_Scammers_I">&larr; Parte I</a>
+            <span class="series-nav-label">Scammers</span>
+        </nav>
+
+            <div class="rating-container" data-contenido="H_Scammers_II" data-tipo="historia">
+            <h3>¿Qué te pareció esta historia?</h3>
+            <div class="stars-average">
+                <div class="star" data-index="0"></div>
+                <div class="star" data-index="1"></div>
+                <div class="star" data-index="2"></div>
+                <div class="star" data-index="3"></div>
+                <div class="star" data-index="4"></div>
+            </div>
+            <p class="rating-count"></p>
+            <p id="rating-msg"></p>
+        </div>
+
+        <section class="comments-section" data-historia="H_Scammers_II.html">
+            <h3>Comentarios</h3>
+
+            <form class="comment-form">
+                <div class="comment-field">
+                    <label for="comment-apodo">Apodo</label>
+                    <input type="text" id="comment-apodo" class="comment-apodo-field" maxlength="50" placeholder="Tu apodo" required>
+                </div>
+                <div class="comment-field">
+                    <label for="comment-texto">Comentario</label>
+                    <textarea id="comment-texto" class="comment-texto-field" maxlength="1000" rows="4" placeholder="¿Qué te pareció esta historia?" required></textarea>
+                    <span class="comment-counter">0 / 1000</span>
+                </div>
+                <button type="submit" class="comment-submit">Publicar comentario</button>
+                <p class="comment-feedback"></p>
+            </form>
+
+            <div class="comments-list"></div>
+            <p class="comments-empty" hidden>Sé el primero en comentar.</p>
+        </section>
+    </div>
+
+    <script src="{{ url_for('static', filename='ratings.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='comentarios.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='interactions.js') }}" defer></script>
+</body>
+</html>
