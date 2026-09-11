@@ -43,6 +43,8 @@ CONTENIDO_VALIDO = {
     "H_EscuadronImposible_Epilogo": "historia",
     "H_Scammers_I": "historia",
     "H_Scammers_II": "historia",
+    "H_Scammers_III": "historia",
+    "H_Scammers_IV": "historia",
 
     # Reseñas
     "rese_tfundacion_asimov": "resena",

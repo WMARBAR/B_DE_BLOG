@@ -243,6 +243,14 @@ def H_Scammers_I():
 def H_Scammers_II():
     return render_template('H_Scammers_II.html')  # Archivo H_Scammers_II.html
 
+@app.route('/H_Scammers_III')
+def H_Scammers_III():
+    return render_template('H_Scammers_III.html')  # Archivo H_Scammers_III.html
+
+@app.route('/H_Scammers_IV')
+def H_Scammers_IV():
+    return render_template('H_Scammers_IV.html')  # Archivo H_Scammers_IV.html
+
 @app.route('/resenas')
 def resenas():
     return render_template('resenas.html')  # reseñas.html
